@@ -20,7 +20,7 @@ ini_set( 'mysql.trace_mode', 0 );
 change:
     <link rel="stylesheet" href="/css/base.css" type="text/css" />
 to:
-    <link rel="stylesheet" href="<?php echo auto_version('/css/base.css'); ?>" type="text/css" />
+    <link rel="stylesheet" href="< ?php echo auto_version('/css/base.css'); ? >" type="text/css" />
 */
 // update mbastack_enqueue_scripts (below line 128 of this file)
 
@@ -877,7 +877,40 @@ function my_login_logo_url_title() {
 add_filter( 'login_headertext', 'my_login_logo_url_title' );
 
 
+// --------------------------------------------------------------
+// https://imranhsayed.medium.com/saving-the-acf-json-to-your-plugin-or-theme-file-f3b72b99257b
+// --------------------------------------------------------------
 
+// save ACF pro custom fields to /themes/mbastack-2021/acf-json/ 
+define( 'MY_PLUGIN_DIR_PATH', untrailingslashit( plugin_dir_path( __FILE__ ) ) );
+add_filter('acf/settings/save_json', 'my_acf_json_save_point');
+ 
+function my_acf_json_save_point( $path ) {
+    
+    // Update path
+    $path = MY_PLUGIN_DIR_PATH . '/acf-json';
+
+    // Return path
+    return $path;
+}
+
+// load ACF-json files
+add_filter('acf/settings/load_json', 'my_acf_json_load_point');
+/*
+ * Register the path to load the ACF json files so that they are version controlled.
+ * @param $paths The default relative path to the folder where ACF saves the files.
+ * @return string The new relative path to the folder where we are saving the files.
+ */
+function my_acf_json_load_point( $paths ) {
+   // Remove original path
+   unset( $paths[0] );
+// Append our new path
+   $paths[] = MY_PLUGIN_DIR_PATH . '/acf-json';
+   return $paths;
+}
+
+
+/* form test code START */
 
 // set up php session
 function register_my_session()
@@ -888,8 +921,6 @@ function register_my_session()
   }
 }
 add_action('init', 'register_my_session');
-
-
 
 // https://medium.com/nerd-for-tech/how-to-create-a-simple-nonce-in-php-a5afe046beee
 /* Nonce class */
@@ -1024,6 +1055,7 @@ class Nonce {
         return true;
     }
 }
+/* form test code END */
 
 ?>
 
