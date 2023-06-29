@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: generic
+Template Name: default post
 */
 // default post template
 // currently handles news/blog posts

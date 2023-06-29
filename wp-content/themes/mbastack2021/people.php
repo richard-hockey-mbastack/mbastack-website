@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: generic
+Template Name: people
 */
 
 /*

@@ -1058,4 +1058,3 @@ class Nonce {
 /* form test code END */
 
 ?>
-
