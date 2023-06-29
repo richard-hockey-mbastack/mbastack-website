@@ -27,8 +27,8 @@
             "mime_types": ""
         },
         {
-            "key": "field_6373ad18a72c8",
-            "label": "Video file",
+            "key": "field_6373bca9dbf2e",
+            "label": "Video",
             "name": "video_file",
             "type": "file",
             "instructions": "",
@@ -192,5 +192,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1688042856
+    "modified": 1688038837
 }
