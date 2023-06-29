@@ -45,7 +45,7 @@
         </div>
       </div>
       <div class="col-lg-8 copyright">
-        <p><span>&copy;</span>MBAstack, 2022. All rights reserved.</p>
+        <p><span>&copy;</span>MBAstack, 2023. All rights reserved.</p>
         <ul id="menu-footer-links" class="navbar-nav">
           <li id="menu-item-41" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-privacy-policy menu-item-41"><a href="/privacy-policy/">Privacy Policy</a></li>
           <li id="menu-item-49" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-privacy-policy menu-item-49"><a href="/cookie-policy/">Cookie Policy</a></li>
