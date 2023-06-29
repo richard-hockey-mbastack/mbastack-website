@@ -1,0 +1,6 @@
+Vimeo Player javascript SDK
+
+https://developer.vimeo.com/player/sdk/basics
+
+methods
+https://developer.vimeo.com/player/sdk/reference#play-a-video

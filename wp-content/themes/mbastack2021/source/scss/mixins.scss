@@ -1,0 +1,7 @@
+@mixin transopacity2($duration) {
+    -webkit-transition: opacity $duration ease;
+    -moz-transition: opacity $duration ease;
+    -ms-transition: opacity $duration ease;
+    -o-transition: opacity $duration ease;
+    transition: opacity $duration ease;
+}

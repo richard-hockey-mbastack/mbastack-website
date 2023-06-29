@@ -1,0 +1,92 @@
+/*
+case-study-intro
+/blocks/casestudy/modules/intro.php
+*/
+
+section.case-study-intro{
+	padding-top:1rem;
+	padding-bottom:0rem;
+	background-color: $body-copy;
+	color: #fff;
+
+	.row1{
+		.copy1{
+			font-size:20px;
+			line-height:140%;
+			font-weight:400;
+		}
+		.copy2{
+			font-size:16px;
+			line-height:160%;
+			font-weight:300;
+		}
+	}
+	.row2{
+		.main{
+			h2{
+				color:$pink;
+				text-transform:uppercase;
+				font-family: 'IBM Plex Mono', monospace;
+				font-size:12px;
+				line-height:150%;
+				font-weight:400;
+				letter-spacing:2.44px;
+				margin:0 0 1.8rem 0;
+				padding:0 0 0 ;
+				opacity:1;
+				width:auto;
+				display:inline-block;
+				position:relative;
+				&:after{
+					content:' ';
+					height:1px;
+					width:2000px;
+					position:absolute;
+					right:calc(100% + 1rem);
+					top:50%;
+					background-color:$pink;
+				}
+
+			}
+			p{
+				font-size:16px;
+				line-height:160%;
+				font-weight:300;
+				margin-bottom:0;
+			}
+		}
+	}
+}
+
+@media screen and (min-width:992px) {
+	section.case-study-intro{
+		.row1{
+			.copy1{
+				font-size:28px;
+				padding-right: 15%;
+				p{
+					margin-bottom:0;
+				}
+			}
+			.copy2{
+				font-size:18px;
+				line-height:140%;
+				p{
+					margin-bottom:0;
+				}
+			}
+		}
+		.row2{
+			.main{
+				h2{
+					font-size:12px;
+					margin-top:4rem;
+				}
+				p{
+					font-size:18px;
+					line-height:140%;
+				}
+			}
+		}
+	}
+}

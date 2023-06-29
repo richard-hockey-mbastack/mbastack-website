@@ -1,0 +1,609 @@
+section.sharedCaseStudies{
+  background-color:$body-copy;
+
+  .loadMoreControl{
+    position:relative;
+    &.pending{
+      &::after{
+        content:" ";
+        display:block;
+        width:32px;
+        height:32px;
+        position:absolute;
+        left:calc(50% - 16px);
+        bottom:0px;
+
+        background-image:url('../img/spinner-tw.png');
+        background-position:center bottom;
+        background-size:32px 32px;
+        background-repeat:no-repeat;
+        -webkit-animation:spinclockwise 2s linear infinite;
+        -moz-animation:spinclockwise 2s linear infinite;
+        -ms-animation:spinclockwise 2s linear infinite;
+        animation:spinclockwise 2s linear infinite;
+      }
+    }
+
+    .container{
+      p{
+        color:#fff;
+        background-image:url('../img/load-more-white.png');
+      }
+    }
+  }
+  .clipper{
+    width:100%;
+    display:flex;
+    flex-wrap:wrap;
+  }
+  .background{
+    height:480px;
+    &.noVideo{
+      figure{
+        opacity:0.75;
+      }
+    }
+    figure{
+      height:480px;
+      opacity:0.0;
+      transition: all 0.3s ease;
+      img{
+        transform: translate(-50%,-50%);
+      }
+    }
+    .videoWrapper{
+      opacity:0.75;
+      transform: scale(1.0,1.0);
+    }
+  }
+
+  .caseStudy{
+    position:relative;
+    width:100%;
+    overflow:hidden;
+
+    &:hover{
+      p.falseArrow{
+        -webkit-animation:bounceRight $boundeDuration linear $bounceRepeat;
+        -moz-animation:bounceRight $boundeDuration linear $bounceRepeat;
+        -ms-animation:bounceRight $boundeDuration linear $bounceRepeat;
+        animation:bounceRight $boundeDuration linear $bounceRepeat;
+      }
+    }
+
+    .posabs{
+      position:absolute;
+      left:0px;
+      top:0px;
+      z-index:10;
+      width:100%;
+      height:480px;
+      overflow:hidden;
+      display:flex;
+      align-items:flex-end;
+    }
+    .container{
+      .row{
+        .col{
+          padding-bottom:2rem;
+          h2,h3,p{
+            color:#F4EFFF;
+          }
+
+          h2{
+            font-size: 12px;
+            line-height: 26px;
+            letter-spacing: 1.71px;
+            text-transform: uppercase;
+            
+            margin:0 0 1rem 0;
+            font-weight:500;
+            text-transform:uppercase;
+            font-family: 'IBM Plex Mono', monospace;
+          }
+          .textOverlay{
+            width:100%;
+            padding:0;
+            box-sizing:border-box;
+
+            h3{
+              font-size: 22px;
+              line-height: 140%;
+              padding-right:2rem;
+              box-sizing:border-box;
+              margin:0 0 1rem 0;
+            }
+            p{
+              font-size:12px;
+              line-height:120%;
+              margin:0 0 0rem 0;
+            }
+            .falseArrow{
+              font-size:18px;
+              font-weight:300;
+              display:inline-block;
+              width:auto;
+              height:32px;
+              line-height:32px;
+              padding-right:50px;
+              background-image:url('../img/arrow-white-large.png');
+              background-repeat:no-repeat;
+              background-position:right center;
+            }
+          }
+
+          @media screen and (min-width:992px){                
+            &{
+              h2{
+                font-size: 12px;
+                line-height: 26px;
+              }
+              .textOverlay{
+                padding:0 5rem 0 0;
+
+                h3{
+                  font-size: 3rem;
+                  line-height: 120%;
+                  padding-right:0;
+                }
+                p{
+                  font-size:16px;
+                  line-height:34px;
+                }
+              }
+
+            }
+          }
+        }
+      }
+    }
+
+    a.csLink{
+      position:absolute;
+      display:block;
+      left:0px;
+      top:0px;
+      width:100%;
+      height:100%;
+      z-index:20;
+      background-color:rgba(255, 0, 0, 0.0);
+
+      span{
+        text-indent:-9999em;
+        overflow:hidden;
+        display:block;
+        width:0;
+        height:0;
+        padding:0;
+        margin:0;
+      }
+    }
+
+    @media screen and (min-width:992px){
+      &{
+        // & -> .caseStudy
+        .container{
+          .row{
+            .col{
+              h2{
+                opacity:0.25;
+                transition: all 0.3s ease;
+              }
+              .textOverlay{
+                opacity:0.25;
+                /* @include transopacity2(0.3s); */
+                transition: all 0.3s ease;
+              }
+            }
+          }
+        }
+        .background{
+          &.noVideo{
+            figure{
+              opacity:0.75;
+              transform: scale(1.0,1.0);
+            }
+          }
+          figure{
+            opacity:0;
+            transition: all 0.3s ease;
+          }
+          .videoWrapper{
+            opacity:0.75;
+            transform: scale(1.0,1.0);
+            transition: all 0.3s ease;
+          }
+        }
+        &:hover{
+          .background{
+            &.noVideo{
+              figure{
+                opacity:0.5;
+                transform: scale(1.1,1.1);
+              }
+            }
+            figure{
+              opacity:0;
+            }
+            .videoWrapper{
+                opacity:0.5;
+                transform: scale(1.1,1.1);
+            }
+          }
+          .container{
+            .row{
+              .col{
+                h2{
+                  opacity:1.0;
+                }
+                .textOverlay{
+                  opacity:1.0;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  #itemTemplate{
+    display:none;
+  }
+
+}
+
+section.sharedCaseStudies.rowLayout{
+}
+
+section.sharedCaseStudies.carouselLayout{
+  overflow:hidden;
+  .topclip{
+    .container{
+      z-index:0;
+      div{
+        display:flex;
+        justify-content:space-between;
+        align-items:start;
+        div.controls{
+
+        }
+        div.controls > div{
+          display:inline-block;
+          width:20px;
+          height:20px;
+          background-repeat:no-repeat;
+          background-position:center;
+          width:32px;
+          height:27px;
+          cursor:pointer;
+
+          &.prevItem{
+            background-image:url('../img/nav-left1.png');
+          }
+          &.nextItem{
+            background-image:url('../img/nav-right1.png');
+          }
+        }
+      }
+    }
+  }
+  
+  /*
+  // slick-slider carousel styles
+  .csfwop{
+    transition:transform 0.3s ease;
+    transform:scale(0,0);
+    &.ready{
+      transform:scale(1.0, 1.0);
+    }
+  }
+  // display part of left hand edge of next item in slider
+  .slick-list{
+    // padding:0 14% 0 0 !important;
+    margin-bottom:24px;
+    .caseStudy{
+      padding-right:1em;
+    }
+  }
+  button{
+    border:0;
+    background-color:transparent;
+    text-indent:-9999em;
+    display:inline-block;
+    overflow:hidden;
+  }
+
+  .slick-arrow{
+    background-repeat:no-repeat;
+    background-position:center;
+    width:32px;
+    height:27px;
+    position:absolute;
+    top:-60px;
+    right:0px;
+    z-index:1;
+    &.slick-prev{
+      display:none !important;
+      background-image:url('../img/nav-left1.png');
+    }
+    &.slick-next{
+      background-image:url('../img/nav-right1.png');
+    }
+  }
+
+  .slick-dots{
+    list-style-type:none;
+    padding:0 10px;
+    box-sizing:border-box;
+    display:flex !important;
+    justify-content:space-evenly;
+    li{
+      flex-grow:1;
+      &.slick-active{
+        button{
+          background-color:$pink;
+        }
+      }
+      button{
+        height:2px;
+        width:100%;
+        background-color:#fff;
+      }
+    }
+  }
+  */
+
+  // HTML hprizontal scroll
+  .csfwop{
+    overflow-x:scroll;
+    width:100vw;
+    margin-bottom:2rem;
+    padding-bottom:1rem;
+
+    // firefox
+    &{
+      scrollbar-height: thin;
+      scrollbar-color: $pink #fff;
+    }
+
+    // webkit
+    &::-webkit-scrollbar {
+      height: 3px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: #fff;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: $pink;
+    }    
+
+    .caseStudyCarousel{
+      display:flex;
+      flex-wrap:nowrap;
+      position:relative;
+      .dragTrack{
+        position:absolute;
+        left:0px;
+        top:0px;
+        width:100%;
+        height:100%;
+        z-index:50;
+        display:none;
+        background-color:rgba(255, 0, 0, 0.0);
+        cursor:grabbing;
+      }
+      .caseStudy{
+        width:80vw;        
+        box-sizing:border-box;
+        padding-right:2rem;
+      }
+    }
+  }  
+}
+
+section.sharedCaseStudies.gridLayout{
+    .caseStudy{
+      padding-bottom:1em;
+    }
+}
+
+@media screen and (min-width:992px) {
+  section.sharedCaseStudies.rowLayout{
+  }
+
+  section.sharedCaseStudies.carouselLayout{
+    .caseStudyCarousel{
+    }
+  }
+
+  section.sharedCaseStudies.gridLayout{
+    .csWrapper{
+      display:flex;
+      flex-wrap:wrap;
+      .caseStudy{
+        padding-bottom:2rem;
+        box-sizing:border-box;
+        &:nth-child(5n + 1){
+          width:100%;
+        }
+        &:nth-child(5n + 2){
+          width:40%;
+          padding-right:2rem;
+        }
+        &:nth-child(5n + 3){
+          width:60%;
+        }
+        &:nth-child(5n + 4){
+          width:65%;
+          padding-right:2rem;
+        }
+        &:nth-child(5n){
+          width:35%;
+        }
+      }
+      .clipper{
+        &:nth-child(2n + 1){
+          width:100%;
+          .caseStudy{
+            &:nth-child(5n + 1){
+              width:100%;
+              padding-right:2rem;
+            }
+            &:nth-child(5n + 2){
+              width:40%;
+              padding-right:0;
+            }
+            &:nth-child(5n + 3){
+              width:60%;
+              padding-right:0;
+            }
+            &:nth-child(5n + 4){
+              width:65%;
+              padding-right:2rem;
+            }
+            &:nth-child(5n + 5){
+              width:35%;
+              padding-right:0;
+            }
+          }
+        }
+        &:nth-child(2n){
+          width:100%;
+          .caseStudy{
+            &:nth-child(5n + 1){
+              width:40%;
+              padding-right:2rem;
+            }
+            &:nth-child(5n + 2){
+              width:60%;
+              padding-right:0rem;
+            }
+            &:nth-child(5n + 3){
+              width:100%;
+              padding-right:0;
+            }
+            &:nth-child(5n + 4){
+              width:65%;
+              padding-right:2rem;
+            }
+            &:nth-child(5n + 5){
+              width:35%;
+              padding-right:0rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width:576px) {
+  section.sharedCaseStudies.carouselLayout{
+    .caseStudyCarousel{
+      .slick-list{
+        padding-left:calc((100% - 540px) / 2);
+        padding-right:calc((100% - 412px) / 2);
+      }
+      .slick-arrow{
+        right:calc((100% - 412px) / 2);
+      }
+    }
+  }
+}
+
+@media screen and (min-width:768px) {
+  section.sharedCaseStudies.carouselLayout{
+    .caseStudyCarousel{
+      .slick-list{
+        padding-left:calc((100% - 720px) / 2);
+        padding-right:calc((100% - 547px) / 2);
+      }
+      .slick-arrow{
+        right:calc((100% - 547px) / 2);
+      }
+    }
+  }
+}
+
+@media screen and (min-width:992px) {
+  section.sharedCaseStudies.carouselLayout{
+    .caseStudyCarousel{
+      .slick-list{
+        padding-left:calc((100% - 960px) / 2);
+        padding-right:calc((100% - 727px) / 2);
+      }
+      .slick-arrow{
+        right:calc((100% - 727px) / 2);
+      }
+    }
+  }
+}
+
+@media screen and (min-width:1200px) {
+  section.sharedCaseStudies.carouselLayout{
+    .caseStudyCarousel{
+      .slick-list{
+        padding-left:calc((100% - 1140px) / 2);
+        padding-right:calc((100% - 862px) / 2);
+      }
+      .slick-arrow{
+        right:calc((100% - 862px) / 2);
+      }
+    }
+  }
+}
+
+@media screen and (min-width:1400px) {
+  section.sharedCaseStudies.carouselLayout{
+    .caseStudyCarousel{
+      .slick-list{
+        padding-left:calc((100% - 1320px) / 2);
+        padding-right:calc((100% - 998px) / 2);
+      }
+      .slick-arrow{
+        right:calc((100% - 998px) / 2);
+      }
+    }
+  }
+}
+
+section.case-study-more_case_studies{
+  padding-top: 4rem;
+  .caseStudyCarousel{
+    .slick-list{
+      .caseStudy{
+        padding-right:0;
+        .posabs{
+          .bg{
+            position:absolute;
+            left:0px;
+            top:0px;
+            width:100%;
+            height:100%;
+            z-index:1;
+            opacity:0.71;
+            opacity:0.5;
+            background: linear-gradient(32.45deg, #fe00ff 0%, #5800FF 100%);
+          }
+          .container{
+            .row{
+              .col{
+                padding-left:3rem;
+                padding-right:3rem;
+                h2{
+                  opacity:1;
+                }
+                .textOverlay{
+                  opacity:1;
+                }
+              }
+            }
+          }
+        }
+      }  
+    }
+  }
+}

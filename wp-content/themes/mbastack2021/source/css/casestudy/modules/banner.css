@@ -1,0 +1,11 @@
+/*
+case-study-banner
+/blocks/casestudy/modules/banner.php
+*/
+section.case-study-banner .h1box h1 {
+  color: #fff;
+  text-transform: uppercase;
+}
+section.case-study-banner .h1box p {
+  color: #fff;
+}

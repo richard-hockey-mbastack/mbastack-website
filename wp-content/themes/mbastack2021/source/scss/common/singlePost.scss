@@ -1,0 +1,164 @@
+/*
+single news/blog post
+/index.php
+/source//scss/common/singlePost.scss -> /assets/css/styles.css
+*/
+section.postTitle{
+	h1{
+		font-size:80px;
+	}
+}
+
+section.singlePost{
+	padding-top:5rem;
+	color:$body-copy;
+	.aside{
+		order:2;
+		figure{
+			width:50%;
+			margin:0 auto 1rem auto;
+			img{
+				width:100%;
+			}
+			figcaption{
+				font-size:18px;
+				line-height:150%;
+				font-weight:300;
+			}
+		}
+		h3{
+			font-family: 'IBM Plex Mono', monospace;
+			font-size:16px;
+			line-height:120%;
+			font-weight:400;
+			margin-bottom:0.25rem;
+		}
+		h4{
+			font-family: 'IBM Plex Mono', monospace;
+			font-size:16px;
+			line-height:120%;
+			font-weight:400;
+			margin-bottom:1rem;
+		}
+		p{
+			font-size:18px;
+			line-height:150%;
+			font-weight:300;
+			margin-bottom:0.5rem;
+		}
+		ul{
+			list-style-type:none;
+			padding-left:0;
+			display:flex;
+			li{
+				display:inline-block;
+				margin-right:1rem;
+
+				a{
+					display:block;
+					width:18px;
+					height:18px;
+					overflow:hidden;
+					background-repeat:no-repeat;
+					background-image:url('../img/social-media-logos.png');
+					background-size:36px 72px;
+					span{
+						text-indent:-9999em;
+						display:inline-block;
+					}
+					&.twitter{
+						background-position: -18px -18px;
+					}
+					&.linkedin{
+						background-position: -18px -55px;
+					}
+				}
+			}
+		}
+	}
+	.content{
+		order:1;
+		h3{
+			font-size:28px;
+			margin-bottom:1rem;
+		}
+		h4{
+			font-size:20px;
+			margin-bottom:1rem;
+		}
+		p,ul,ol{
+			font-size:20px;
+			line-height:150%;
+			color:$body-copy;
+			font-weight:300;
+			margin-bottom:1rem;
+			strong{
+				font-weight:400;
+			}
+			a{
+				color:$body-copy;
+				font-weight:400;
+				text-decoration:underline;
+			}
+		}
+		figure.wp-block-image{
+			img{
+				width:100%;
+			}
+			figcaption{
+				font-size:18px;
+				line-height:150%;
+				color:#body-copy;
+				font-weight:300;
+			}
+		}
+		figure.wp-block-embed{
+			&.is-type-video{
+
+			}
+			&.is-provider-vimeo{
+				background-image: url('../img/spinner.gif');
+				background-position:center;
+				background-repeat:no-repeat;
+				.wp-block-embed__wrapper{
+					position:relative;
+					padding-top:56.1%;
+					iframe{
+						position:absolute;
+						left:0px;
+						top:0px;
+						width:107%;
+						height:100%;
+						object-fit:cover;
+					}
+				}
+			}
+		}
+	}
+
+
+	@media screen and (min-width:992px){
+		&{
+			.aside{
+				order:1;
+				figure{
+					width:100%;
+				}
+			}
+			.content{
+				order:2;
+			}
+		}
+		
+
+	}
+
+}
+
+section.otherPosts{
+	.newsitem{
+		figure{
+			margin-bottom:1rem;
+		}
+	}
+}

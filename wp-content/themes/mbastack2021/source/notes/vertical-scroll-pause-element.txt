@@ -1,0 +1,166 @@
+
+
+	// 'paused' element
+	// .paused
+	(() => {
+		window.setTimeout(function(){
+		  console.log("'paused' element");
+
+		  class ScrollMonitor{
+		    constructor(parameters){
+		      this.target = parameters.target;
+		      this.top = parameters.top;
+		      this.height = parameters.height;
+		      this.range = parameters.range;
+
+		      this.bound = false;
+		      this.active = false;
+
+		      this.init();
+		    }
+
+		    init(){
+		      let that = this;
+
+	      	this.a = this.top;
+	      	this.b = this.top + this.range;
+	      	this.vw = $(window).height();
+	      	this.scene = this.target.get(0);
+
+	      	this.spacer = $('div.pauseSpacer').get(0);
+
+	      	this.be = 0;
+					$('#d2').text(this.a);
+					$('#d3').text(this.b);
+
+	      	$('body').append( $('<div></div>').addClass('mark').addClass('start').css({"top" : this.a + "px"}) );
+	      	$('body').append( $('<div></div>').addClass('mark').addClass('end').css({"top" : this.b + "px"}) );
+
+		      if (!this.bound) {
+		        console.log('scroll event bound 397');
+		        $(window).on('scroll',() => { this.monitor(); });
+		        this.bound = true;
+		      }
+
+		      if (!this.active){
+		      	this.active = true;
+		      }
+		    }
+
+		    monitor(){
+		    	let that = this;
+
+		    	let percent = 0;
+		    	if (this.active) {
+		    		let scrolltop = $(window).scrollTop();
+	        	let effect = 0;
+		    		// console.log("ScrollMonitor monitor 411 scrolltop: %s", scrolltop);
+		        $('#d1').text(scrolltop);
+
+		        if ( scrolltop < this.a){
+		        	effect = 0;
+		        }
+		        if ( scrolltop > this.b ){
+		        	effect = this.range;
+		        }
+
+		    		if ( scrolltop > this.a && scrolltop < this.b) {
+			        effect = scrolltop - this.a;
+
+		    			$('body').addClass('noScroll');
+		    			// percent
+		    			// percent = (scrolltop - this.a) / (this.b - this.a);
+		    			// $('#d4').text(Math.floor(percent * 100));
+
+		    			// this.target.get(0).style.marginTop = (percent * this.range) + 'px';
+		    			// this.target.css({"margin-top" : (percent * this.range) + "px"})
+
+		    			// effect
+		    			console.log("effect: %s", effect);
+		    		}
+
+	    			if( this.be !== effect ) {
+		    			window.requestAnimationFrame(function(){
+		    				// that.scene.style.marginTop = effect + 'px';
+		    				that.spacer.style.height = effect + 'px';
+		    				that.be = effect;
+		    			});
+	    			}
+		    	}
+		    }
+		    stopMonitor(){
+		    	this.active = false;
+		    }
+		   }
+
+			const pausedModule = $('.paused');
+
+		  // instantiate observer
+		  if ( pausedModule.length > 0 ) {
+			  let monitor = null;
+				const range  = 1000; // 1000px 'pause' in scrolling to accomodate animation
+				const pauseTop = pausedModule.position().top;
+				const pauseHeight = pausedModule.height();
+
+				console.log("range: %s top: %s height: %s", range, pauseTop, pauseHeight);
+
+				let thisScrollMonitor = new ScrollMonitor({
+					"target" : pausedModule,
+					"top" : pauseTop,
+					"height" : pauseHeight,
+					"range" : range 
+				});
+
+				/*
+				let options = {
+					"root" : null,
+					"rootMargin" : '0px 0px 0px 0px',
+					"threshold" : 0
+				}; // defaults: root rectangle = browser window, events fired when target moves in and out of view (0% / 1 pixel intersection)
+
+				let callback = (entries, observer) => {
+					let entry = entries[0]; // get first and only entry, our target section.paused
+
+					if ( entry.intersectionRatio > 0) {
+						console.log('paused is visible');
+					} else {
+						console.log('paused is not visible');
+					}
+				};
+
+			  let observer = new IntersectionObserver(callback, options);
+			  let target = pausedModule.get(0);
+			  observer.observe( target );
+			  */
+		  }
+
+		},1000);
+	}) ();
+
+div.pauseSpacer{
+	height:0;
+	width:100%;
+	display:block;
+}
+
+section.paused{
+height:75vh;
+	padding-top:0;
+	padding-bottom:0;
+	overflow:inherit;
+	background-color:blue;
+	header{
+
+	}
+}
+
+<div class="pauseSpacer"></div>
+<section class="module paused">
+  <!--
+  <header>
+    <h2>'Paused' element</h2>
+    <p>https://stackoverflow.com/questions/60253135/html-js-pause-vertical-scrolling-and-animate-an-element-instead</p>
+  </header>
+  -->
+</section>
+

@@ -1,0 +1,133 @@
+section.module{
+	box-sizing:border-box;
+	position:relative;
+	opacity:1;
+	padding-top:3rem;
+	padding-bottom:3rem;
+	box-sizing:border-box;
+
+	.bg1{
+		position: absolute;
+		left: 0px;
+		top: 0px;
+		z-index: 1;
+		width: 100%;
+		height: 100%;
+	}
+	.container{
+		position:relative;
+		z-index:1;
+	}
+	&.full-width{
+		width:100%;
+		@media screen and (min-width:768px) {
+			&{
+			}
+		}
+		@media screen and (min-width:992px) {
+			&{
+			}
+		}
+		@media screen and (min-width:1200px) {
+			&{
+			}
+		}
+		@media screen and (min-width:1400px) {
+			&{
+			}
+		}
+
+	}
+
+	&.sticky-module{
+		overflow:inherit;
+	}
+
+	&.parallax-window{
+		background:transparent;
+	}
+
+	&.noTopPadding{padding-top:0px !important;}
+	&.noBottomPadding{padding-bottom:0px !important;}
+
+	&.OneremTopPadding{padding-top:1rem !important;}
+	&.OneremBottomPadding{padding-bottom:1rem !important;}
+
+	&.TworemTopPadding{padding-top:2rem !important;}
+	&.TworemBottomPadding{padding-bottom:2rem !important;}
+	
+	&.ThreeremTopPadding{padding-top:3rem !important;}
+	&.ThreeremBottomPadding{padding-bottom:3rem !important;}
+
+	&.FourremTopPadding{padding-top:4rem !important;}
+	&.FourremBottomPadding{padding-bottom:4rem !important;}
+
+	&.FiveremTopPadding{padding-top:5rem !important;}
+	&.FiveremBottomPadding{padding-bottom:5rem !important;}
+
+	&.SixremTopPadding{padding-top:6rem !important;}
+	&.SixeremBottomPadding{padding-bottom:6rem !important;}
+
+	&.SevenremTopPadding{padding-top:7rem !important;}
+	&.SevenremBottomPadding{padding-bottom:7rem !important;}
+
+	&.EightremTopPadding{padding-top:8rem !important;}
+	&.EightremBottomPadding{padding-bottom:8rem !important;}
+
+	&.NineremTopPadding{padding-top:9rem !important;}
+	&.NineremBottomPadding{padding-bottom:9rem !important;}
+
+	&.TenremTopPadding{padding-top:10rem !important;}
+	&.TenremBottomPadding{padding-bottom:10rem !important;}
+}
+
+header.topclip{
+	.container{
+		& > div{
+			h2{
+				color:#fff;
+				text-transform:uppercase;
+				font-family: 'IBM Plex Mono', monospace;
+				font-size:13px;
+				line-height:150%;
+				font-weight:400;
+				letter-spacing:2.44px;
+				margin:0 0 1.8rem 0;
+				padding:0 0 0.6rem 0;
+				opacity:1;
+				width:auto;
+				display:inline-block;
+				position:relative;
+				&:after{
+					content:' ';
+					height:1px;
+					width:2000px;
+					position:absolute;
+					right:0px;
+					bottom:0px;
+					background-color:$pink;
+				}
+			}
+		}
+	}
+}
+
+a.scrolldown{
+	position:absolute;
+	bottom:0px;
+	left:50%;
+	z-index:25;
+	transform:translate3d(-50%,0%,0);
+	overflow:hidden;
+	width:100%;
+	height:44px;
+	display:inline-block;
+	cursor:pointer;
+	background-image:url('../img/nav-down1.png');
+	background-repeat:no-repeat;
+	background-position:center;
+	span{
+		display:inline-block;
+		text-indent:-9999em;
+	}
+}

@@ -1,0 +1,100 @@
+page layouts 17 08 2021§
+
+home
+	header - logo + main nav @
+	banner carousel
+	who panel (two column test/image) @
+	case studies * 5 @ (shared)
+	clients
+	news & awards @ (shared)
+	People (3 items, blue background) @  (shared)
+	Values block
+		background image
+		semitransparent module header white,012 opacity
+		test
+		following link
+	footer @
+
+Who we are
+	header - logo + main nav @
+	static banner - background image + page title H1
+	single column text
+	CXM block
+		central image with with three text blocks revelaed when one of the three nodes on the image is clicked on
+	Tools
+		module header
+		module subtitle
+		module intro text
+		two column layout of five items, each item broken into two columns ivon / text
+	How
+		module header
+		module subtitle
+		module copy width collapded and expanded forms
+		following link
+	Group
+		MSQ map @
+	footer @
+
+Work
+	header - logo + main nav @
+	banner shows a selected case study, similar layout to home page banner
+	single column text @ STATIC
+		module header
+		Intro copy
+	Case studies * 5 with 'load more' @ (shared)
+
+	footer @
+
+News
+	header - logo + main nav @
+	static banner - background image + page title H1
+	News & awards with 'load more' (shared)
+		no detail pages, items link out to external sites
+	Blog 
+		similar layout to News & awards except with lead item and six following items
+		seven categories: 'Environemt', 'Awards', 'Insights', 'Data', 'CXM', 'Film', 'Industry' - sorter / filter? -> page reload / AJAX content rebuild
+			on filter:
+				a) replace lead item with first item of filter set -> lead item is latest blog post in overall set / filtered set
+				or
+				b) filter does not change lead item -> need mechanism to select blog lead item
+		'load more'
+	footer @
+
+Values
+	header - logo + main nav @
+	static banner - background image + page title H1
+	two column layout
+		alternating text / image
+		interleave between columns so images overlap between rows
+		option for different row background colours / image
+		option ot put icons/small images in text column
+		light/dark copy
+	footer @
+
+People
+	header - logo + main nav @
+	static banner - background image + page title H1
+	People / meet the team
+		module header 'Meet the team'
+		similar layout to existing people module but with more items
+		white background / black copy
+	footer @
+
+Contact
+	header - logo + main nav @
+	static banner - background image + page title H1
+	two column layout
+		alternating text / image
+		interleave between columns so images overlap between rows
+		option for different row background colours / image
+		option ot put icons/small images in text column
+		light/dark copy
+		possible google map insert instead of image	
+	footer @
+
+Blog item page ?
+	use same image for banner and thumbnail on News & awards pages
+	combination of standard word press gutenberg editor and ACF fields?
+	
+
+Case study page ?

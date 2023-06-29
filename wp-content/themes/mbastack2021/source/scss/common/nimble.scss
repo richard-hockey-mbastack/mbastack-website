@@ -1,0 +1,141 @@
+/*
+nimble
+*/
+
+section.nimble{
+	color:$body-copy;
+	padding-top:5rem;
+
+	@media screen and (min-width:992px){
+		padding-top:7rem;		
+	}
+	
+	.topclip{
+		h2{
+			color:#EAEAEA;
+		}
+	}
+
+	p{
+		font-size:16px;
+		line-height:24px;
+		font-weight:300;
+	}
+	h3{
+		font-size:24px;
+		line-height:55px;
+	}
+	h4{
+		font-size:24px;
+		line-height:38px;
+		margin-bottom:1rem;
+	}
+
+	@media screen and (min-width:992px) {
+		&{
+			h3{
+				font-size:40px;
+				line-height:120%;
+			}
+			h4{
+				font-size:26px;
+				line-height:120%;
+			}
+			p{
+				font-size:18px;
+				line-height:120%;
+			}
+		}
+	}
+
+	/* Clipper small */
+	.clipper{
+		order:4;
+		button{
+			border:0;
+			background-color:#fff;
+			padding:0;
+
+			span{
+				display:inline-block;
+				width:27px;
+				height:14px;
+				background-repeat:no-repeat;
+				vertical-align:text-bottom;
+				background-image:url('../img/expander-small.png');
+			}
+
+			&.expander{
+				display:block;
+				&.hide{
+					display:none;
+				}
+				span{
+					background-position:0 -14px;
+				}
+			}
+			&.closer{
+				display:block;
+				&.hide{
+					display:none;
+				}
+				span{
+					background-position:0 0px;
+				}
+			}
+		}
+		.outer{
+			max-height:0;
+			transition:max-height 0.3s ease;
+			overflow:hidden;
+		}
+		&.open{
+			.outer{
+				max-height:100rem;
+			}
+		}
+	}
+
+	/* Clipper LARGE
+	.clipper{
+		button{
+			border:0;
+			background-color:#fff;
+			padding:0;
+			width:73px;
+			height:27px;
+			background-repeat:no-repeat;
+			background-image:url('../img/expander-large.png');
+			span{
+				display:block;
+				text-indent:-9999em;
+				overflow:hidden;
+			}
+			&.expander{
+				display:block;
+				background-position:0 -27px;
+				&.hide{
+					display:none;
+				}
+			}
+			&.closer{
+				display:block;
+				background-position:0 0px;
+				&.hide{
+					display:none;
+				}
+			}
+		}
+		.outer{
+			max-height:0;
+			transition:max-height 0.3s ease;
+			overflow:hidden;
+		}
+		&.open{
+			.outer{
+				max-height:100rem;
+			}
+		}
+	}
+	*/
+}

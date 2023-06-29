@@ -1,0 +1,33 @@
+/*
+fwimage
+*/
+section.module.fullWidthImage {
+  padding-bottom: 0;
+  min-height: unset;
+  position: relative;
+}
+section.module.fullWidthImage header {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}
+section.module.fullWidthImage figure {
+  margin: 0;
+}
+section.module.fullWidthImage figure img.desktop {
+  display: none;
+}
+section.module.fullWidthImage figure img.mobile {
+  display: block;
+}
+@media screen and (min-width: 992px) {
+  section.module.fullWidthImage figure.desktop {
+    display: block;
+  }
+  section.module.fullWidthImage figure.mobile {
+    display: none;
+  }
+}
+section.module.fullWidthImage.natural figure img {
+  width: 100%;
+}

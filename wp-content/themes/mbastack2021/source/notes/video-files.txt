@@ -1,0 +1,23 @@
+http://local.mbastack /wp-content/themes/mbastack2021/assets/temp/video/inline_video.mp4
+
+http://local.mbastack/wp-content/themes/mbastack2021/assets/video/acca-is-your-business-ready/acca_header.mp4
+http://local.mbastack/wp-content/themes/mbastack2021/assets/video/acca-is-your-business-ready/acca_widget.mp4
+http://local.mbastack/wp-content/themes/mbastack2021/assets/video/electroral-commission-got-5/got5.mp4
+http://local.mbastack/wp-content/themes/mbastack2021/assets/video/solace-hidden-abuse/solace-hidden-abuse.mp4
+
+https://mbastack-staging.co.uk/wp-content/themes/mbastack2021/assets/temp/video/inline_video.mp4
+
+https://mbastack-staging.co.uk/wp-content/themes/mbastack2021/assets/video/acca-is-your-business-ready/acca_header.mp4
+https://mbastack-staging.co.uk/wp-content/themes/mbastack2021/assets/video/acca-is-your-business-ready/acca_widget.mp4
+
+https://mbastack-staging.co.uk/wp-content/themes/mbastack2021/assets/video/electroral-commission-got-5/got5.mp4
+
+https://mbastack-staging.co.uk/wp-content/themes/mbastack2021/assets/video/peugeot-jaf/jaf_telematics_hot_date.mp4
+
+https://mbastack-staging.co.uk/wp-content/themes/mbastack2021/assets/video/solace-hidden-abuse/solace-hidden-abuse.mp4
+
+https://mbastack-staging.co.uk/wp-content/themes/mbastack2021/assets/video/solace-stop-it-coming-home/solace-1kbps-sml.mp4
+
+https://mbastack-staging.co.uk/wp-content/themes/mbastack2021/assets/video/we-buy-any-home/wbah01-1kbps.mp4
+
+https://mbastack-staging.co.uk/wp-content/themes/mbastack2021/assets/video/hertz-stop-before-you-get-there/hertz-route-planner-1kbps.mp4

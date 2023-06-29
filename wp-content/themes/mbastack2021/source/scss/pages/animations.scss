@@ -1,0 +1,218 @@
+@mixin slideInAnimationSetup {
+	position:relative;
+	top:500px;
+	opacity:0;
+}
+
+// html.portraitAspectRatio, html.landscapeAspectRatio{}
+
+// who panel move text and image ins from sides with fade in
+#module-two_column-1 .textColumn{
+	@include slideInAnimationSetup;
+}
+#module-two_column-1 .imageColumn{
+	@include slideInAnimationSetup;
+}
+
+/**/
+
+
+		section.homeValues{
+			.ba{
+			@include slideInAnimationSetup;
+			}
+		}
+
+		section.latestClients{
+			.item{
+					transition:all 0.3s ease;
+					left:0px;
+					@include slideInAnimationSetup;
+			}
+		}
+
+		.newsitem{
+				// transition:opacity 0.6s ease;
+				transition:all 0.6s ease;
+				left:0px;
+				@include slideInAnimationSetup;
+		}
+
+		.newsitem.ready,
+		.newsitem.imageFail{
+			opacity:1;
+			transform: translate3d(0px,-500px,0px);
+		}
+
+		section.introCopy{
+			.ba{
+				@include slideInAnimationSetup;
+			}
+		}
+
+		section.nimble{
+			.copy{
+				h3,p.ic,.clipper{
+					@include slideInAnimationSetup;
+				}
+			}
+		}
+
+		section.twoColumnParallax,
+		section.valuesBlocks{
+			.image,
+			.text{
+				@include slideInAnimationSetup;
+			}
+		}
+
+		// 'People' page animation setup
+		section.people.peopleGrid{
+			.teamIntro, .item{
+				@include slideInAnimationSetup;
+			}
+		}
+
+
+		section.awards{
+			.introbox{
+				@include slideInAnimationSetup;
+			}
+			.awards{
+
+				.award{
+					@include slideInAnimationSetup;
+					@media screen and (min-width:992px) {
+						&{
+							&:nth-child(odd){
+								top:580px;
+							}
+							&:nth-child(even){
+								top:500px;
+							}
+						}
+					}
+				}
+				&.single-award{
+					.award{
+						@media screen and (min-width:992px) {
+							&{
+								&:nth-child(odd){
+									top:500px;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+
+		section.case-study-banner{}
+		section.case-study-intro{
+			p{
+				@include slideInAnimationSetup;
+			}
+		}
+		section.case-study-fullwidth_image{
+			figure{
+				@include slideInAnimationSetup;
+			}
+		}
+		section.case-study-fullwidth_video{
+			.videoBox{
+				@include slideInAnimationSetup;
+			}
+		}
+
+
+		section.case-study-two_column_media{
+			.media{
+				@include slideInAnimationSetup;
+			}	
+		}
+
+		section.singlePost{
+			.content{
+				p, ul, ol, h2, h3, h4, h5, figure{
+					@include slideInAnimationSetup;
+				}	
+			}
+		}
+
+
+/**/
+
+
+
+/*
+section.case-study-single_column_text{
+	h3,h4,p{
+		@include slideInAnimationSetup;	
+	}
+}
+
+section.case-study-image_carousel{
+	
+}
+
+section.sharedCaseStudies{
+	.caseStudy{
+		@include slideInAnimationSetup;
+		transition:all 0.3s ease;
+		&.loaded{
+			top:0px;
+			opacity:1;
+		}
+	}
+}
+
+section.tools{
+	header.sub{
+		@include slideInAnimationSetup;
+	}
+
+	.item{
+		@include slideInAnimationSetup;
+		&:nth-child(odd){
+		}
+		&:nth-child(even){
+		}
+	}
+}
+
+section.group{
+	.maps{
+		.mapgraph{
+			@include slideInAnimationSetup;
+		}
+		.msqinfo{	
+			bottom:-500px;
+			opacity:0;
+		}
+	}
+}
+
+// 'People' slickslider carousel on home page
+// seems to be a compatibility problen between GSAP and slickSlider
+section.peopleSlickSlider{
+	.ssp{
+		.item{
+			@include slideInAnimationSetup;
+			transition:all 0.3s ease;
+			&.ready{
+				opacity:1;
+				top:0px;
+			}
+		}
+	}
+}
+
+section.case-study-awards{
+	.point{
+		position:relative;
+		top:250px;
+		opacity:0;
+		transition:all 0.3s ease;
+	}
+}
+*/

@@ -1,0 +1,88 @@
+/*
+group
+/blocks/common/group.php
+*/
+
+section.group{
+	background-color:#5709fc;
+	overflow:hidden;
+	header{
+		h2{
+			colour:#0D0127;
+			opacity:0.12;
+		}
+	}
+
+	.msqinfo{
+		width:100%;
+		.copy{
+			h3,p{
+				color:#fff;
+			}
+			h3{
+				font-size:24px;
+				line-height:160%;
+			}
+			p{
+				font-size:16px;
+				line-height:160%;
+				font-weight:300;
+				margin-bottom:0;
+			}
+		}
+	}
+
+	.maps{
+		position:relative;
+		z-index:1;
+
+		figure{
+			position:relative;
+			z-index:1;
+			width:100%;
+			max-width:1320px;
+			margin:0 auto;
+			&.desktop{
+				display:none;
+			}
+			&.mobile{
+				display:block;
+			}
+		}
+	}
+
+
+	@media screen and (min-width:992px) {
+		&{
+			.msqinfo{
+				.copy{
+					width:100%;	
+					display:flex;
+
+					h3{
+						font-size:20px;
+						line-height:160%;
+						width:40%;
+					}
+					p{
+						font-size:18px;
+						line-height:160%;
+						width:60%;
+					}
+				}
+			}
+			.maps{
+				margin-top:-60px;
+				margin-bottom:-60px;
+				figure{
+					&.desktop{
+						display:block;
+					}
+					&.mobile{
+						display:none;
+					}
+				}
+			}
+		}
+	}
+}

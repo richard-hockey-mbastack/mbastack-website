@@ -1,0 +1,43 @@
+paroller
+
+https://www.jqueryscript.net/animation/Horizontal-Vertical-Parallax-Scrolling-Effects-In-jQuery-paroller-js.html
+https://www.jqueryscript.net/demo/Horizontal-Vertical-Parallax-Scrolling-Effects-In-jQuery-paroller-js/
+
+<!-- jQuery -->
+<script src="/path/to/cdn/jquery.slim.min.js"></script>
+<!-- Paroller -->
+<script src="/path/to/dist/jquery.paroller.js"></script>
+<!-- Or From A CDN -->
+<script src="https://cdn.jsdelivr.net/npm/paroller.js/dist/jquery.paroller.min.js"></script>
+
+configuration data attributes:
+	data-paroller-factor: scale factor
+	data-paroller-type: "foreground" or "background"
+	data-paroller-factor-sm: scale factor on small devices (<769px)
+	data-paroller-factor-xs: scale factor on extra small devices (<576px)
+	data-paroller-factor-md: scale factor on middle size devices (<1025px)
+	data-paroller-factor-lg: scale factor on extra large devices (<1921px)
+	data-paroller-direction: "horizontal" or "vertical"
+	data-paroller-transition: CSS transitions
+
+<div class="my-element"
+     data-paroller-factor="-0.1" 
+     data-paroller-type="foreground"
+     data-paroller-direction="horizontal"
+>
+
+bind:
+$('.my-element').paroller();
+
+or set options via javascript
+$(".element").paroller({
+  factor: 0, // - to +
+  factorXs: 0, // - to +
+  factorSm: 0, // - to +
+  factorMd: 0, // - to +
+  factorLg: 0, // - to +
+  factorXl: 0, // - to +
+  type: 'background', // foreground
+  direction: 'vertical', // horizontal
+  transition: 'translate 0.1s ease'
+});

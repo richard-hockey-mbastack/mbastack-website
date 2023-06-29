@@ -1,0 +1,283 @@
+html:
+  <div class="diag"><p>scrolltop; <span id="d1">-</span> a: <span id="d2">-</span> b: <span id="d3">-</span> percent: <span id="d4">-</span>%</p></div>
+  <section class="module observerTarget">
+    <header>
+      <h2>Intersection observer API</h2>
+      <p>https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API</p>
+    </header>
+    <div class="track">
+      <div class="slider">
+        <div class="posrel">
+          <div class="sect section1"></div>
+          <div class="sect section2"></div>
+          <div class="sect section3"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+scss:
+  section.observerTarget{
+    padding: 0;
+    overflow:inherit;
+    &.on{
+      .track{
+        background-color: #7f7f7f;
+        .sect{
+        }
+      }
+    }  
+    header{
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      width: 100%;
+      height: 100vh;
+      z-index: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+    .track{
+      height: 600vh; 
+      width: 100%;
+      max-width:1320px;
+      margin:0 auto;
+      background-color: #000;
+      overflow:inherit;
+
+      .slider{
+        height: 100vh;
+        width: 100%;
+        position:sticky;
+        left: 0px;
+        top: 0px;
+        z-index: 2;
+        opacity:1;
+        background-color:green;
+      }
+    }
+    .posrel{
+      position:relative;
+      width:100%;
+      height:100%;
+    }
+    .sect{
+      position:absolute;
+      left:0px;
+      top:0px;
+      width:100%;
+      height:100%;
+      opacity:0;
+      transition:opacity 0.5s ease;
+
+      &.section1{
+        background-color:#f00;
+        z-index:1;
+      }
+
+      &.section2{
+        background-color:#0f0;
+        z-index:2;
+      }
+
+      &.section3{
+        background-color:#00f;
+        z-index:3;
+      }
+
+      &.active{
+        opacity:1
+      }  
+    }
+  }
+
+
+js:
+  // Intersection Observer API
+  // use observer to see when an element is within the viewport, then use scroll events to monitor the position of the element
+
+  (() => {
+    console.log('Intersection Observer API 189');
+
+    let pain = function(){
+      console.log('pain');
+      console.log(this);
+    }
+
+    /* -- */
+    class ScrollMonitor{
+      constructor(parameters){
+        this.target = parameters.target;
+        this.top = parameters.top;
+        this.height = parameters.height;
+        this.vw = parameters.vw;
+
+        this.bound = false;
+        this.active = false;
+
+        this.init();
+      }
+
+      init(){
+        let that = this;
+
+        if (!this.bound) {
+          console.log('scroll event bound');
+          // bind scroll event handler to window so that it can be unbound later
+          // *** addEventListener - removeEventListener will not work with anonymous functions ***
+          // window.addEventListener('scroll', () => that.ymonitor, false); // doesn't fire callback
+          // window.addEventListener('scroll', that.ymonitor, false); // passes window -> this
+          // window.addEventListener('scroll', this.ymonitor, false); // passes window -> this
+          // window.addEventListener('scroll', that.ymonitor.bind(that), false); // passes ScrollMonitor instance -> this, but can't be removed
+          // window.addEventListener('scroll', this.ymonitor.bind(this), false); // passes ScrollMonitor instance -> this, but can't be removed
+          // window.addEventListener('scroll', function(){ that.ymonitor(); }, false); // passes ScrollMonitor instance -> this, but can't be removed
+          // window.addEventListener('scroll', pain.bind(this), false); // passes ScrollMonitor instance -> this, but can't be removed
+
+          // window.addEventListener('scroll', () => {that.ymonitor(); }, false); // fires callback but doesn't allow for removing event handler
+
+          $(window).on('scroll',() => { that.ymonitor(); });
+          this.bound = true;
+        }
+
+        if (!this.active){
+          this.active = true;
+          this.a = this.top; // top of track at top of browser viewport
+          this.b = (this.top + this.height) - this.vw; // bottom of track at bottom of viewport
+          // $('#d2').text(this.a);
+          // $('#d3').text(this.b);
+        }
+      }
+
+      ymonitor(){
+        // can't remove eveny handler, so prevent any action when it fires
+        let percent = 0;
+        if( this.active ) {
+          let scrolltop = $(window).scrollTop();
+
+          // $('#d1').text(scrolltop);
+
+          if( this.a > scrolltop){
+            percent = 0.0;
+          }
+          
+          if( this.a < scrolltop && scrolltop < this.b ) {
+            percent = (scrolltop - this.a) / (this.b - this.a);
+
+            if (0 < percent && percent < 0.333) {
+              $('.section1').addClass('active');
+              $('.section2').removeClass('active');
+              $('.section3').removeClass('active');
+            }
+            if (0.333 < percent && percent < 0.666) {
+              $('.section2').addClass('active');
+              $('.section1').removeClass('active');
+              $('.section3').removeClass('active');
+            }
+            if (0.666 < percent && percent < 1.0) {
+              $('.section3').addClass('active');
+              $('.section2').removeClass('active');
+              $('.section1').removeClass('active');
+            }
+          }
+
+          if( this.b < scrolltop){
+            percent = 1.0;
+          }
+
+          // $('#d4').text(Math.floor(percent * 100));
+        }
+      }
+      
+      stopMonitor(){
+        this.active = false;
+
+        // unbind scroll event handler
+        // window.removeEventListener('scroll', pain, false);
+      }
+    }   
+    /* -- */
+
+    let monitor = null;
+
+    // define observer options
+    // set to defaults
+    // root borwser viewport
+    // rootMargin: 0 margins top right bottom left
+    // thresholds: 0, fire callback as soon as the target enters the viewport
+    let options = {
+    // root: document.querySelector('#scrollArea'), // browser viewport or scrollable element
+
+    /*
+    rootMargin: '-100px 0px -100px 0px',
+    fire callbacks when:
+    100px of the target is revealed
+    100px before the target is concealed
+
+    ---------------------- target top
+    100px
+    ====================== bottom of browser viewport
+    //////////////////////
+
+    and
+
+    //////////////////////
+    ====================== top of browser viewport
+    100px
+    ---------------------- bottom of target
+    */
+
+    // threshold: [0.0, 0.333, 0.666, 1.0] 
+    }
+
+    // define observer callback
+    let callback = (entries, observer) => {
+
+      // entries.forEach(entry => {
+        let entry = entries[0];
+        if ( entry.intersectionRatio > 0) {
+          $(entry.target).addClass('on');
+
+          let thisTarget = $(entry.target);
+
+          if ( monitor === null) {
+            monitor = new ScrollMonitor({
+              "target" : thisTarget,
+              "top" : thisTarget.position().top,
+              "height" : entry.boundingClientRect.height,
+              "vw" : $(window).height()
+            });
+          } else {
+            monitor.target = thisTarget;
+            monitor.top = thisTarget.position().top;
+            monitor.height = entry.boundingClientRect.height;
+            monitor.vw = $(window).height();
+
+            monitor.init();
+          }
+
+          // target is visble
+          // start watching scroll position
+
+        } else {
+          $(entry.target).removeClass('on');
+
+          // target is no longer visble
+          // stop watching scroll position
+          if ( monitor !== null) {
+            monitor.stopMonitor();
+          }
+        }
+
+      // });
+
+    };
+
+    // instantiate observer
+    if ( $('.observerTarget').length > 0 ) {
+      let observer = new IntersectionObserver(callback, options);
+      let target = $('.observerTarget').get(0);
+      observer.observe( target );
+    }
+  }) ();

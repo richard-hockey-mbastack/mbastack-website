@@ -1,0 +1,170 @@
+	.graph{
+		figure{
+			position:relative;
+			width:100%;
+			max-width:660px;
+			padding-top:100%;
+			margin:0 auto;
+
+			@media screen and (min-width:576px) {
+				&{
+					padding-top:100%;
+				}
+			}
+			@media screen and (min-width:768px) {
+				&{
+					padding-top:90%;
+				}
+			}
+			@media screen and (min-width:992px) {
+				&{
+					padding-top:70.5%;
+				}
+			}
+			@media screen and (min-width:1200px) {
+				&{
+					padding-top:59%;
+				}
+			}
+			@media screen and (min-width:1400px) {
+				&{
+					padding-top:50%;
+				}
+			}
+
+			img{
+				display:block;
+				width:27%;
+
+				&.frame{
+					/* 386 / 660 -> 58.5% */
+					position:absolute;
+					left:50%;
+					top:50%;
+					transform:translate(-50%,-50%);
+					width:58.5%;
+
+				}
+
+				&.reset{
+					position:absolute;
+					left:50%;
+					top:50%;
+					/* transform:translate(-50%,-50%); */
+					margin-left:-13.5%;
+					cursor:pointer;
+					transition:opacity 0.3s ease, transform 0.3s ease;
+					&:hover{
+						transform:scale(1.1,1.1);
+					}
+				}
+
+				&.node{
+					position:absolute;
+					cursor:pointer;
+					transition:opacity 0.3s ease, transform 0.3s ease;
+					&.creativity{
+						left:50%;
+						top:0%;
+						/* transform:translate(-50%,0%); */
+						margin-left:-13.5%;
+					}
+					&.data{
+						right:0;
+						top:58%;
+					}
+					&.technology{
+						left:0;
+						top:58%;
+					}
+					&:hover{
+						transform:scale(1.1,1.1);
+					}
+				}
+			}
+		}
+	}
+
+	/*
+	.data-on{
+		#cb-data{
+			.outer{
+				max-height:100rem;
+			}
+		}
+		.graph{
+			figure{
+				img{
+					&.frame{
+						opacity:0.25;
+					}
+					&.node{
+						&.creativity{
+							opacity:0.25;
+						}
+						&.data{
+							opacity:1.0;
+						}
+						&.technology{
+							opacity:0.25;
+						}
+					}
+				}
+			}
+		}
+	}
+	.creativity-on{
+		#cb-creativity{
+			.outer{
+				max-height:100rem;
+			}
+		}
+		.graph{
+			figure{
+				img{
+					&.frame{
+						opacity:0.25;
+					}
+					&.node{
+						&.creativity{
+							opacity:1.0;
+						}
+						&.data{
+							opacity:0.25;
+						}
+						&.technology{
+							opacity:0.25;
+						}
+					}
+				}
+			}
+		}
+	}
+	.technology-on{
+		#cb-technology{
+			.outer{
+				max-height:100rem;
+			}
+		}
+		.graph{
+			figure{
+				img{
+					&.frame{
+						opacity:0.25;
+					}
+					&.node{
+						&.creativity{
+							opacity:0.25;
+						}
+						&.data{
+							opacity:0.25;
+						}
+						&.technology{
+							opacity:1.0;
+						}
+					}
+				}
+			}
+		}
+	}
+	*/

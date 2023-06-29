@@ -1,0 +1,48 @@
+sticky element - sticks to top of browser window when user scrolls down to container
+	let targetItem = $('#scrollclip .sc'); 
+	let targetBox = $('#scrollclip');
+	let targetBoxScrollTop = parseInt(targetBox.position().top,10);
+	console.log("targetScrollTop: %s", targetBoxScrollTop);
+
+	$(window).scroll(function(){
+		// var throttle = window.setTimeout(function(){
+			let windowScrollTop = parseInt($(window).scrollTop(),10);
+			let offset = 0;
+			if(windowScrollTop >= targetBoxScrollTop) {
+				offset = windowScrollTop - targetBoxScrollTop;
+			}
+			targetItem.css({"top" : offset + "px"});
+			targetItem.find('h2').text(offset);
+			console.log("offset : %s", offset);
+		// }, 10);
+	});
+
+section.module.scrollMonitor{
+	min-height:75vh;
+	overflow:hidden;
+	.container{
+		position:relative;
+	}
+	.sc{
+		background-color:#f00;
+		width:250px;
+		height:250px;
+		display:flex;
+		align-Items:center;
+		justify-content:center;
+		position:absolute;
+		top:0;
+		h1{
+			display:block;
+			width:auto;
+			margin:0;
+			padding:0;
+		}
+	}
+}
+
+<section class="module scrollMonitor">
+  <div class="container" id="scrollclip">
+    <div class="sc"><h2>SC</h2></div>
+  </div>
+</section>

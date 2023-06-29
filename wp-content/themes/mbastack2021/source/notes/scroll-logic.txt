@@ -1,0 +1,69 @@
+		/* */
+		/*
+		// case 1 :
+		// top of target moves onto bottom of viewport
+		// to
+		// bottom of target off of top of viewport
+
+		// scrollTop + 100vh
+		if ( (scrolltop + this.wh) < this.top ){
+			this.update(0);
+		}
+
+		if ( (scrolltop + this.wh) > this.top && (scrolltop < this.bottom) ) {
+			let a = this.top - this.wh;
+			let b = this.bottom;
+			let percent =  (scrolltop - a ) / ( b - a );
+			this.update(percent);
+		}
+
+		if ( (scrolltop) > this.bottom ){
+			this.update(1.0);
+		}
+		*/
+		/* */
+
+		/* */
+		/*
+		// case 2 :
+		// top of target moves onto bottom of viewport
+		// to
+		// bottom of target moves onto bottom of viewport
+
+		if ( (scrolltop + this.wh) < this.top ){
+			this.update(0);
+		}
+
+		if ( (scrolltop + this.wh) > this.top && ((scrolltop + this.wh) < this.bottom) ) {
+			let a = this.top - this.wh;
+			let b = this.bottom - this.wh;
+			let percent =  (scrolltop - a ) / ( b - a );
+			this.update(percent);
+		}
+
+		if ( (scrolltop + this.wh) > this.bottom ){
+			this.update(1.0);
+		}
+		*/
+		/* */
+
+		/* */
+		// case 3 :
+		// top of target moves off top of viewport
+		// to
+		// bottom of target moves onto bottom of viewport
+		if ( (scrolltop) < this.top ){
+			this.update(0);
+		}
+
+		if ( scrolltop > this.top && ((scrolltop + this.wh) < this.bottom) ) {
+			let a = this.top;
+			let b = this.bottom - this.wh;
+			let percent =  (scrolltop - a ) / ( b - a );
+			this.update(percent);
+		}
+
+		if ( (scrolltop + this.wh) > this.bottom ){
+			this.update(1.0);
+		}
+		/* */

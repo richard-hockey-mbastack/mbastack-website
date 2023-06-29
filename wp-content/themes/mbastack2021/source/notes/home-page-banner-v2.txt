@@ -1,0 +1,69 @@
+<section class="module banner homeBanner <?php if ($hasCarousel) : ?>hasCarousel<?php endif; ?>" id="homeBanner-01">
+
+<?php if ($hasCarousel) : ?>  
+  <p>Has carousel</p>
+  <p>display landing slide first, then following slides</p>
+<?php else : ?>
+  <div class="background mobile">
+    <?php if ( !empty( $thisItemMeta['mobile']['poster'] ) ) : ?><figure><img src="<?php echo $thisItemMeta['mobile']['poster']; ?>"></figure><?php endif; ?>
+        <?php
+          switch ( $thisItemMeta['mobile']['format'] ) {
+            case 'vimeo' : {
+        ?>
+        <div class="videoWrapper vimeoWrapper" data-mode="autoplay" data-format="vimeo" data-height="727" data-width="1296">
+          <div class="pr">
+            <iframe class="vimeo" src="https://player.vimeo.com/video/<?php echo $thisItemMeta['mobile']['source']; ?>?autoplay=1&loop=1&autopause=0&controls=0&background=1&color=000000&portrait=1" frameborder="0" allow="autoplay;" title=""></iframe>
+          </div>
+        </div>
+
+        <?php
+            } break;
+            case 'youtube' : {
+        ?>
+        <div class="videoWrapper youtubeWrapper" data-format="youtube" data-source="<?php echo $thisItemMeta['mobile']['source']; ?>" >
+        </div>
+        <?php
+            } break;
+            case 'inline' : {
+        ?>
+          <div class="videoWrapper inlineWrapper" data-mode="autoplay" data-format="inline" data-height="1080" data-width="1920" data-source="<?php echo $thisItemMeta['mobile']['source']; ?>">
+            <div class="pr"></div>
+          </div>
+        <?php
+            } break;
+          }
+        ?>
+  </div>
+  <div class="background desktop">
+    <?php if ( !empty( $thisItemMeta['desktop']['poster'] ) ) : ?><figure><img src="<?php echo $thisItemMeta['desktop']['poster']; ?>"></figure><?php endif; ?>
+        <?php
+          switch ( $thisItemMeta['desktop']['format'] ) {
+            case 'vimeo' : {
+        ?>
+        <div class="videoWrapper vimeoWrapper" data-mode="autoplay" data-format="vimeo" data-height="727" data-width="1296">
+          <div class="pr">
+            <iframe class="vimeo" src="https://player.vimeo.com/video/<?php echo $thisItemMeta['desktop']['source']; ?>?autoplay=1&loop=1&autopause=0&controls=0&background=1&color=000000&portrait=1" frameborder="0" allow="autoplay;" title=""></iframe>
+          </div>
+        </div>
+
+        <?php
+            } break;
+            case 'youtube' : {
+        ?>
+        <div class="videoWrapper youtubeWrapper" data-format="youtube" data-source="<?php echo $thisItemMeta['desktop']['source']; ?>" >
+        </div>
+        <?php
+            } break;
+            case 'inline' : {
+        ?>
+          <div class="videoWrapper inlineWrapper" data-mode="autoplay" data-format="inline" data-height="1080" data-width="1920" data-source="<?php echo $thisItemMeta['desktop']['source']; ?>">
+            <div class="pr"></div>
+          </div>
+        <?php
+            } break;
+          }
+        ?>
+  </div>
+<?php endif; ?>
+  <a class="scrolldown" data-container="section.module" data-target="nextmodule"><span>Go to next module</span></a>
+</section>

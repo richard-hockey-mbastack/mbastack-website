@@ -1,0 +1,284 @@
+/*
+module: twoColumnParallax
+blocks/common/modules/twoColumnParallax
+*/
+
+section.twoColumnParallax{
+	padding: 3.5rem 0 3.5rem 0;
+	&.noBottomPadding{
+		.pair{
+			padding-bottom:0;
+			@media screen and (min-width:992px) {
+				&{
+					padding-bottom:0;
+				}
+			}		
+		}
+	}
+	.pair{
+		width:100%;
+		padding:1.5rem 0 1.5rem 0;
+		.image{
+			width:100%;
+		}
+		&.black{
+			.text{
+				h3,h4,p{
+					color:$body-copy;
+				}
+			}
+		}
+		&.white{
+			.text{
+				h3,h4,p{
+					color:#fff;
+				}
+			}
+		}
+		.text{
+			width:100%;
+			.tbox{
+				width:100%;
+				padding:2rem 2rem 0rem 2rem;
+				box-sizing:border-box;
+
+				@media screen and (min-width:992px) {
+					&{
+						max-width:480px;
+					}
+				}
+				@media screen and (min-width:1200px) {
+					&{
+						max-width:570px;
+					}
+				}
+				@media screen and (min-width:1400px) {
+					&{
+						max-width:660px;
+					}
+				}
+
+				.twoaddress{
+					div{
+
+					}
+					@media screen and (min-width:640px) {
+						&{
+							display:flex;
+							div{
+								width:50%;
+							}
+						}
+					}
+				}
+
+			}
+		}
+
+		&:nth-child(odd){
+			.image{
+				order:2;
+				padding-left:2rem;
+				padding-right:0;
+			}
+		}
+		&:nth-child(even){
+			.image{
+				order:1;
+				padding-right:2rem;
+				padding-left:0;
+			}
+		}
+	}
+
+	&.first-row-image-text{
+		.pair{
+			&:nth-child(odd){
+				.image{
+					padding-right:2rem;
+					padding-left:0;
+				}
+			}
+			&:nth-child(even){
+				.image{
+					padding-left:2rem;
+					padding-right:0;
+				}
+			}
+		}
+	}
+
+	@media screen and (min-width:992px) {
+		&{
+			padding:2.5rem 0 2.5rem 0;
+			&.first-row-image-text{
+				.pair{
+					&:nth-child(odd){
+						.image{
+							order:1;
+							padding-left:0;
+							padding-right:0;
+						}
+						.text{
+							order:2;
+							justify-content:flex-start;
+							.tbox{
+								padding-left:8rem;
+								padding-right:0;
+							}
+						}
+					}
+					&:nth-child(even){
+						.image{
+							order:2;
+							padding-left:0;
+							padding-right:0;
+						}
+						.text{
+							order:1;
+							justify-content:flex-end;
+							.tbox{
+								padding-left:0;
+								padding-right:8rem;
+							}
+						}
+					}
+				}
+			}
+			.pair{
+				width:100%;
+				display:flex;
+				flex-wrap:wrap;
+				padding:2.5rem 0 2.5rem 0;
+				.image{
+					width:50%;
+					padding-left:0;
+					padding-right:0;
+				}
+				.text{
+					width:50%;
+					display:flex;
+					align-items:center;
+					.tbox{
+						padding-top:3rem;
+						padding-bottom:3rem;
+					}
+				}
+				&:nth-child(odd){
+					.image{
+						order:2;
+					}
+					.text{
+						justify-content:flex-end;
+						order:1;
+						.tbox{
+							padding-left:0;
+							padding-right:8rem;
+						}
+					}
+				}
+				&:nth-child(even){
+					.image{
+						order:1;
+					}
+					.text{
+						order:2;
+						justify-content:flex-start;
+
+						.tbox{
+							padding-left:8rem;
+							padding-right:0;
+						}
+					}
+				}
+			}
+
+			figure{
+				/* image column 680 x 460 aspect ratio 0.676 */
+				padding-top:67.6%;
+			}
+		}
+	}
+
+	figure{
+		/* image column 680 x 460 aspect ratio 0.676 */
+		padding-top:67.6%;
+
+		width:100%;
+		position:relative;
+		overflow:hidden;
+		margin:0;
+		img{
+			position:absolute;
+			left:50%;
+			top:50%;
+			min-height:100%;
+			min-width:100%;
+			width:100%;
+			object-fit:cover;
+			transform:translate(-50%,-50%);
+		}
+		/*
+		img{
+			transition:all 0.3s ease;
+			transform:translate(-50%,-50%)  scale(1.0,1.0);
+		}
+		&:hover{
+			img{
+				transform:translate(-50%,-50%)  scale(1.1,1.1);
+			}	
+		}
+		*/
+	}
+
+	.contactMap{
+		width:100%;
+		padding-top:67.6%;
+		background-color:#c0c0c0;
+	}
+
+	h3,h4,p{
+		color:$body-copy;
+	}
+	h3{
+		font-size:26px;
+		line-height:36px;
+		font-weight:400;
+		margin-bottom:1rem;
+	}
+	p,li{
+		font-size:16px;
+		line-height:24px;
+		font-weight:300;
+		margin-bottom:1rem;
+		a{
+			color:$body-copy;
+			text-decoration:underline;		
+		}
+	}
+	@media screen and (min-width:992px) {
+		&{
+			h3{
+				font-size:40px;
+				line-height:120%;
+			}
+			p,li{
+				font-size:18px;
+				line-height:150%;
+			}
+
+		}	
+	}
+}
+
+section.module.parallax-window{
+	background-image:url('../img/grid-mobile.png') !important;
+	background-repeat:repeat !important;
+	background-size:initial !important;
+	@media screen and (min-width:992px) {
+		&{
+			background-color:transparent !important;
+			background-image:none !important;
+		}	
+	}
+}

@@ -1,0 +1,10 @@
+slickslider change rows on breakpoint
+https://stackoverflow.com/questions/35702923/slick-show-2-row-6-items-on-desktop-and-1-row-1-item-on-mobile
+
+examine unminified version (slick.js)
+
+Slick.prototype.buildRows = function() { ... }
+Slick.prototype.cleanUpRows = function() { ... }
+and change the if condition from if(.options.rows > 1) to if(.options.rows > 0)
+
+the fix is supposedly in the unminifed versions downloadable from https://kenwheeler.github.io/slick/ but not in the minifed version at //cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js

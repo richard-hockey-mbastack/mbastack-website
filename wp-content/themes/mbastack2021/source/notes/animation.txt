@@ -1,0 +1,84 @@
+animation
+
+two-column-mixed
+	home page
+		who
+			gsap .textColumn
+			gsap .imageColumn
+
+sharedCaseStudies
+	batch .sharedCaseStudies .caseStudy
+
+latestClients
+	batch .latestClients .item
+
+latest-news 
+	batch .newsitem
+
+people
+	home page
+		genericScroller
+	People page
+		people
+			gsap .teamIntro
+			batch .people .item
+
+single column
+	gsap .ba
+
+tools
+	gsap header.sub
+	batch .tools .item
+
+cxm
+	genericScoller
+	BuggerScroller
+
+nimble
+	batch .nimble .copy h3,.nimble .copy p.ic, .nimble .copy .clipper
+
+group
+	genericScroller + myLottieScroll
+
+twoColumnParallax
+	batch .twoColumnParallax .image, .twoColumnParallax .text
+
+trinity
+	-
+
+awards
+	gsap .introbox
+	batch .awards .award
+
+fullWidthImage
+	parallax
+	-
+
+case-study-banner
+	-
+
+case-study-intro
+	gsap 
+
+case-study-single_column_text
+	batch .case-study-single_column_text h3, .case-study-single_column_text h4, .case-study-single_column_text p
+
+case-study-fullwidth_image
+	gsap
+
+case-study-awards
+	batch .case-study-awards .point
+
+case-study-fullwidth_video
+	gsap 
+
+case-study-image_carousel
+	gsap
+
+case-study-two_column_media
+	batch .case-study-two_column_media .media
+
+singlePost
+	batch .singlePost .content p, .singlePost .content figure
+	
+

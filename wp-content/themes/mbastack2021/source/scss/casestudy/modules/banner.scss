@@ -1,0 +1,58 @@
+/*
+case-study-banner
+/blocks/casestudy/modules/banner.php
+*/
+
+section.case-study-banner{
+
+	header{
+		min-height:75vh;
+		.h1box{
+			h1{
+				color:#fff;
+				text-transform:uppercase;
+				font-size:10px;
+				line-height:120%;
+				font-family: 'IBM Plex Mono', monospace;
+				letter-spacing:2px;
+				margin:0 0 2rem 0;
+			}
+			p{
+				color:#fff;
+				font-size:30px;
+				line-height:120%;
+				font-weight:400;
+				br{
+					display:none;
+				}
+			}
+			a.scrolldown{
+				position:static;
+				width:100%;
+				transform:none;
+				margin-left:12px;				
+				height:34px;
+				background-image:url('../img/scrolldown-large.png');
+				background-position:left center;
+			}
+		}
+	}
+}
+
+@media screen and (min-width:992px){
+	section.case-study-banner{
+		header{
+			.h1box{
+				h1{
+					font-size:16px;
+				}
+				p{
+					font-size:50px;
+					br{
+						display:block;
+					}
+				}
+			}
+		}
+	}
+}

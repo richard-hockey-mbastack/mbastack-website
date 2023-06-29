@@ -1,0 +1,62 @@
+/*
+Modules flexuble content template for layout: mismatched_images
+blocks/common/modules/mismatched_images
+*/
+
+section.mismatched_images{
+	padding-top:0px;
+	padding-bottom:0px;
+	.images{
+		width:100%;
+	}
+	.large{
+		width:100%;
+	}
+	.small{
+		width:90%;
+		margin:0;autol
+	}
+	.figure{
+		margin-bottom:0;
+		width:100%;
+		img{
+			width:100%;
+		}
+	}
+
+	@media screen and (min-width:576px) {
+		&{
+			.images{
+				max-width:540px;
+			}
+		}
+	}
+	@media screen and (min-width:768px) {
+		&{
+			.images{
+				max-width:720px;
+			}
+		}
+	}
+	@media screen and (min-width:992px) {
+		&{
+			.images{
+				max-width:960px;
+			}
+		}
+	}
+	@media screen and (min-width:1200px) {
+		&{
+			.images{
+				max-width:1140px;
+			}
+		}
+	}
+	@media screen and (min-width:1400px) {
+		&{
+			.images{
+				max-width:1320px;
+			}
+		}
+	}
+}

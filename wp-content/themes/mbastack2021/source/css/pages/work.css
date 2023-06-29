@@ -1,0 +1,21 @@
+section.pageBanner header {
+  width: 100%;
+  height: 640px;
+  max-width: unset;
+  position: relative;
+  padding-bottom: 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center center;
+}
+section.pageBanner header h1 {
+  position: absolute;
+  left: 128px;
+  bottom: 45px;
+  color: #fff;
+  margin: 0;
+  font-size: 123px;
+  line-heoght: 130px;
+  color: #f4efff;
+}

@@ -1,0 +1,18 @@
+case study banner default settings:
+start #fe00ff
+end #e14566
+angle 38.3	
+opacity 0.71
+
+body-copy dark blue module background:
+#0d0127
+
+#FE00FF @ 0%
+#5800FF @ 100%
+46.49
+0.5
+screen
+
+rgba(13,1,39,0.24)
+0.74
+multiply

@@ -1,0 +1,124 @@
+section.awards{
+
+	&.white{
+		color:#fff;
+		header.topclip .container>div h2 {
+			color:#fff;
+		}
+	}
+	&.black{
+		color:$body-copy;	
+		header.topclip .container>div h2 {
+			color:$body-copy;	
+		}
+	}	
+
+	.introbox{
+		padding-bottom:2rem;
+		h3,h4{
+			font-size:26px;
+			line-height:36px;
+			font-weight:400;
+		}
+		h4{
+			font-weight:300;
+		}
+	}
+
+	.award{
+		position:relative;
+		padding-bottom:2rem;
+		figure{
+			width:100%;
+			box-sizing:border-box;
+			margin-bottom:0;
+			img{
+				width:100%;
+				opacity:0.75;
+			}
+		}
+		.copy{
+			box-sizing:border-box;
+			h5,p{
+				margin-bottom:2rem;
+			}
+			h5{
+				font-size:26px;
+				line-height:26px;
+				font-weight:400;
+				margin-top:2rem;
+			}
+			p{
+				font-size:16px;
+				line-height:24px;
+				font-weight:300;
+			}
+		}
+	}
+
+	@media screen and (min-width:992px){
+		&{
+		}
+	}
+
+	@media screen and (min-width:992px){
+		&{
+			.introbox{
+				padding-bottom:2rem;
+				h3,h4{
+					font-size:40px;
+					line-height:120%;
+					font-weight:400;
+				}
+				h4{
+					font-size:30px;
+					font-weight:300;
+				}
+			}
+			.award{
+				padding-bottom:150px;
+				display:flex;
+				figure{
+					width:50%;
+					order:2;
+				}
+				.copy{
+					width:50%;
+					order:1;
+					padding-top:6rem;
+					padding-right:1rem;
+					h5{
+						margin-top:0;
+					}
+				}
+			}
+		}
+	}
+
+	@media screen and (min-width:1200px){
+		&{
+			.award{
+				figure{
+					padding:0 1rem;
+				}
+				.copy{
+					padding-right:2rem;
+				}
+			}
+		}
+	}
+
+	@media screen and (min-width:1400px){
+		&{
+			.award{
+				figure{
+					padding:0 2rem;
+				}
+				.copy{
+					padding-right:2rem;
+				}
+			}
+		}
+	}
+
+}

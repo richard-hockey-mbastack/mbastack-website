@@ -1,0 +1,20 @@
+section.workIntro{
+	.topclip{
+		h2{
+			color:#eaeaea;
+			opacity:1.0;
+		}
+	}
+
+	.introCopy{
+		padding-top:4rem;
+		padding-bottom:4rem;
+		p{
+			color:$body-copy;
+			font-size:2.4rem;
+			line-height:120%;
+			font-weight:400;
+			margin-bottom:2.5rem
+		}
+	}
+}

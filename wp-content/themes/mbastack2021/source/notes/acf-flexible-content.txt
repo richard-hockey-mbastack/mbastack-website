@@ -1,0 +1,8 @@
+ACF flexible content
+https://www.advancedcustomfields.com/resources/flexible-content/
+
+if( get_row_layout() == 'main_slider_section' ):
+
+// render main_slider_section content -> template
+
+endif;

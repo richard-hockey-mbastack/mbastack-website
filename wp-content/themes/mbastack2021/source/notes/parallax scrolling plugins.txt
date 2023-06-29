@@ -1,0 +1,176 @@
+Notes parallax scrolling plugins
+
+https://www.jqueryscript.net/blog/best-parallax-scrolling.html
+
+------------------------------------------------------------------------------------------
+	Jquery
+------------------------------------------------------------------------------------------
+
+jarallax - nice but does not appear to allow for repeating background images 
+handles: inline images,background images (scales image to fit browser window), inline video tag, vimeo video, youtube video
+https://www.jqueryscript.net/animation/High-Performance-Background-Parallax-Effect-with-jQuery-CSS3-jarallax.html
+demo: https://www.jqueryscript.net/demo/High-Performance-Background-Parallax-Effect-with-jQuery-CSS3-jarallax/
+Looks good - handles images,video (youtube,vimeo,inline)
+
+paroller
+not suitable for large background images
+https://www.jqueryscript.net/animation/Horizontal-Vertical-Parallax-Scrolling-Effects-In-jQuery-paroller-js.html
+https://www.jqueryscript.net/demo/Horizontal-Vertical-Parallax-Scrolling-Effects-In-jQuery-paroller-js/
+
+SimpleParallax
+relies on scaling the image up to produce a parallax effect
+compromise between image size and parallax effect
+designed mainly for inline images
+https://www.jqueryscript.net/animation/Image-Parallax-Scroll-jQuery-SimpleParallax.html
+https://simpleparallax.com/
+
+
+PARALLAX BACKGROUND
+requires GSAP, TweenLite, CSSPlugin and Jquery
+
+https://www.jqueryscript.net/animation/Background-Parallax-jQuery-parallaxBackground.html
+https://lemehovskiy.github.io/parallax_background/demo/
+
+https://www.jqueryscript.net/animation/Parallax-Background-jQuery-parlx.html
+https://www.jqueryscript.net/demo/Parallax-Background-jQuery-parlx/
+
+
+
+https://pixelcog.github.io/parallax.js/ - works but requires one image for entire background, does not appear to handle repeating background images
+
+
+------------------------------------------------------------------------------------------
+	Javascript
+------------------------------------------------------------------------------------------
+
+https://www.cssscript.com/animate-scroll-parallax-locomotive/
+https://locomotivemtl.github.io/locomotive-scroll/
+
+https://www.cssscript.com/smooth-parallax-scroll-plugin-universal-parallax/
+https://www.cssscript.com/demo/smooth-parallax-scroll-plugin-universal-parallax/
+
+https://www.cssscript.com/lightweight-vanilla-javascript-parallax-library-rellax/
+https://www.cssscript.com/demo/lightweight-vanilla-javascript-parallax-library-rellax/
+
+
+------------------------------------------------------------------------------------------
+	Pure CSS
+------------------------------------------------------------------------------------------
+
+/*----*/
+https://www.cssscript.com/pure-css-parallax-background-images/
+demo: https://www.cssscript.com/demo/pure-css-parallax-background-images/
+* FIXED IMAGES DOES NOT PARALLAX SCROLL
+/*----*/
+
+	<section class="module parallax parallax-1">
+	  <div class="container">
+	    <h1>Section 1</h1>
+	  </div>
+	</section>
+
+	<section class="module parallax parallax-2">
+	  <div class="container">
+	    <h1>Section 2</h1>
+	  </div>
+	</section>
+
+	<section class="module parallax parallax-3">
+	  <div class="container">
+	    <h1>Section 3</h1>
+	  </div>
+	</section>
+
+	section.module.parallax {
+	  height: 600px;
+	  background-position: 50% 50%;
+	  background-repeat: no-repeat;
+	  background-attachment: fixed;
+	  background-size: cover;
+	}
+
+	section.module.parallax-1 { background-image: url("1.jpg"); }
+
+	section.module.parallax-2 { background-image: url("2.jpg"); }
+
+	section.module.parallax-3 { background-image: url("3.jpg"); }
+
+/*----*/
+https://www.cssscript.com/fixed-position-parallax-scroll-effect-pure-css/
+demo: https://www.cssscript.com/demo/fixed-position-parallax-scroll-effect-pure-css/
+* FIXED IMAGES DOES NOT PARALLAX SCROLL
+/*----*/
+
+	<div class="parrallax-content">
+	  <div class="parrallax">
+	  </div>
+	</div>
+
+	.parrallax-content{
+	  background-image: url(1.jpg);
+	}
+
+	.parrallax-content{
+	  position: relative;
+	  overflow: hidden;
+	  height: 80vh;
+	  -webkit-background-size: cover;
+	  background-size: cover;
+	  background-attachment: fixed;
+	  background-position: center center;
+	}
+
+	.parrallax {
+	  position: absolute;
+	  top: 0;
+	  left: 0;
+	  right: 0;
+	  bottom: 0;
+	  z-index: -1;
+	}
+
+	.parrallax:before {
+	  content: "";
+	  position: fixed;
+	  top: 0;
+	  left: 0;
+	  right: 0;
+	  bottom: 0;
+	  height: 100%;
+	  z-index: -1;
+	  background-position: center top;
+	  background-repeat: no-repeat;
+	  background-size: 120% auto;
+	}
+
+
+------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------
+
+https://www.codehim.com/others/jquery-parallax-scrolling-background-image/
+
+https://gist.github.com/omgmog/7198844
+	$(function() {
+	    var $el = $('.parallax-background');
+	    $(window).on('scroll', function () {
+	        var scroll = $(document).scrollTop();
+	        $el.css({
+	            'background-position':'50% '+(-.4*scroll)+'px'
+	        });
+	    });
+	});
+
+	.parallax-background {
+	    background-image: url('http://placekitten.com/1000/1000');
+	    background-position: 50% 0;
+	    background-repeat: no-repeat;
+	    -webkit-background-size: cover;
+	    background-size: cover;
+
+	    -moz-transform: translate3d(0,0,0);
+	    -webkit-transform: translate3d(0,0,0);
+	    transform: translate3d(0,0,0);
+	}	
+
+https://www.jqueryscript.net/animation/background-parallax-scroll-effect.html
+

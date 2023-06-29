@@ -1,0 +1,13 @@
+page template mappings
+
+contact - contact
+home - home
+news - news
+people - generic
+privacy - privacy
+values - generic
+who we are - who-we-are
+work - work
+
+case study - /single-case-study.php
+news [post / blog post - /index.php 

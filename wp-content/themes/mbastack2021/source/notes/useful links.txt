@@ -1,0 +1,121 @@
+useful links
+------------------------------------------------
+Wordpress Gutenberg block
+https://wptavern.com/ask-the-bartender-how-to-build-wordpress-themes-from-scratch
+https://developer.wordpress.org/block-editor/
+	https://developer.wordpress.org/block-editor/handbook/tutorials/devenv/
+
+
+------------------------------------------------
+block editor dev environment set up
+
+install nvm:
+	curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.2/install.sh | bash
+	* if you get message about .bash / .zshrc / .profile not present run: 
+	touch zshrc
+	and the run the curl command again
+	close your terminal and restert it, nvm should now be available as a command
+
+install node (latest LTS version)
+	nvm --lts
+
+create test gutenberg block
+	npx - tool to run npm packages without having to install them
+	@wordpress/create-block - the block creator npm package to run
+	gutenpride - the name of the directory in which to put the new block
+	npx @wordpress/create-block gutenpride
+
+this creates a new gutenberg block directory which needs to be copied to /wp-content/plugins/ and the activated in the wp-admin plugins section 'look' for the plugin named 'Gutenpride'
+
+The new block can now be used in the gutenberg page block editor go to the block inserter (left hand column in page editor) and search for 'Gutenpride'
+
+------------------------------------------------
+
+https://webdesign.tutsplus.com/tutorials/how-to-create-custom-blocks-for-gutenberg--cms-33547 subscription $16.50/month
+
+------------------------------------------------
+General wordpress
+https://developer.wordpress.org/themes/template-files-section/post-template-files/
+https://developer.wordpress.org/reference/functions/wp_register_script/
+https://developer.wordpress.org/reference/functions/wp_nav_menu/
+https://developer.wordpress.org/reference/functions/wp_get_attachment_image/
+https://developer.wordpress.org/reference/functions/wp_get_attachment_image_src/
+https://codex.wordpress.org/Creating_an_Error_404_Page
+
+https://developer.wordpress.org/reference/classes/wp_query/
+filters:
+Category
+  cat (int) – use category id.
+  category_name (string) – use category slug.
+  category__and (array) – use category id.
+  category__in (array) – use category id.
+  category__not_in (array) – use category id.
+
+Post
+  p (int) – use post id.
+  name (string) – use post slug.
+  page_id (int) – use page id.
+  pagename (string) – use page slug.
+  post_parent (int) – use page id to return only child pages. Set to 0 to return only top-level entries.
+  post_parent__in (array) – use post ids. Specify posts whose parent is in an array. (available since version 3.6)
+  post_parent__not_in (array) – use post ids. Specify posts whose parent is not in an array. (available since version 3.6)
+  post__in (array) – use post ids. Specify posts to retrieve. ATTENTION If you use sticky posts, they will be included (prepended!) in the posts you retrieve whether you want it or not. To suppress this behaviour use ignore_sticky_posts.
+  post__not_in (array) – use post ids. Specify post NOT to retrieve.
+  post_name__in (array) – use post slugs. Specify posts to retrieve. (Will be available in version 4.4)
+
+Post Type
+ post_type (string)
+
+Status
+ post_status (string) :
+  ‘publish‘ – a published post or page.
+  ‘pending‘ – post is pending review.
+  ‘draft‘ – a post in draft status.
+  ‘auto-draft‘ – a newly created post, with no content.
+  ‘future‘ – a post to publish in the future.
+  ‘private‘ – not visible to users who are not logged in.
+  ‘inherit‘ – a revision. see get_children().
+  ‘trash‘ – post is in trashbin (available since version 2.9).
+  ‘any‘ – retrieves any status except for ‘inherit’, ‘trash’ and ‘auto-draft’. Custom post statuses with ‘exclude_from_search’ set to true are also excluded. 
+
+Date
+  year (int) – 4 digit year (e.g. 2011).
+  monthnum (int) – Month number (from 1 to 12).
+  w (int) – Week of the year (from 0 to 53). Uses MySQL WEEK command. The mode is dependent on the “start_of_week” option.
+  day (int) – Day of the month (from 1 to 31).
+  hour (int) – Hour (from 0 to 23).
+  minute (int) – Minute (from 0 to 60).
+  second (int) – Second (0 to 60).
+  m (int) – YearMonth (For e.g.: 201307).
+  date_query (array) – Date parameters (available since version 3.7).
+  year (int) – 4 digit year (e.g. 2011).
+  month (int) – Month number (from 1 to 12).
+  week (int) – Week of the year (from 0 to 53).
+  day (int) – Day of the month (from 1 to 31).
+  hour (int) – Hour (from 0 to 23).
+  minute (int) – Minute (from 0 to 59).
+  second (int) – Second (0 to 59).
+  after (string/array) – Date to retrieve posts after. Accepts strtotime()-compatible string, or array of ‘year’, ‘month’, ‘day’ values:
+    * year (string) Accepts any four-digit year. Default is empty.
+    * month (string) The month of the year. Accepts numbers 1-12. Default: 12.
+    * day (string) The day of the month. Accepts numbers 1-31. Default: last day of month.
+    before (string/array) – Date to retrieve posts before. Accepts strtotime()-compatible string, or array of ‘year’, ‘month’, ‘day’ values:
+    * year (string) Accepts any four-digit year. Default is empty.
+    * month (string) The month of the year. Accepts numbers 1-12. Default: 1.
+    * day (string) The day of the month. Accepts numbers 1-31. Default: 1.
+    inclusive (boolean) – For after/before, whether exact value should be matched or not’.
+  compare (string) – See WP_Date_Query::get_compare().
+  column (string) – Posts column to query against. Default: ‘post_date’.
+  relation (string) – OR or AND, how the sub-arrays should be compared. Default: AND.
+
+https://developer.wordpress.org/reference/functions/wp_get_post_categories/
+
+------------------------------------------------
+how to fix jquery not present error when queing scripts which require jquery
+https://muffingroup.com/blog/jquery-is-not-defined/
+
+https://fossheim.io/writing/posts/css-text-gradient/
+https://css-tricks.com/css-basics-using-multiple-backgrounds/
+
+
+

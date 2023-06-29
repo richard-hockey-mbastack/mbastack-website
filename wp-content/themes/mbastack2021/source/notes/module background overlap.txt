@@ -1,0 +1,9 @@
+preceeding module
+backround-transparent
+
+following module:
+    background-color: black;
+    padding-top: 200px;
+    margin-top: -200px;
+    position: relative;
+    z-index: -1;

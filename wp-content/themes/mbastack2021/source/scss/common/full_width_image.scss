@@ -1,0 +1,176 @@
+/*
+fwimage
+*/
+
+section.module.fullWidthImage{
+	padding-bottom:0;
+	min-height:unset;
+	position:relative;
+	z-index:1;
+
+	header.topclip{
+		position:absolute;
+		top:0px;
+		left:0px;
+		z-index:2;
+	}
+
+	figure{
+		margin:0;
+		img{
+			&.desktop{display:none;}
+			&.mobile{display:block;}
+		}
+		@media screen and (min-width:992px){
+			&{
+				&.desktop{display:block;}
+				&.mobile{display:none;}
+			}
+		}
+	}
+
+	&.noCopy{
+		&.natural{
+			.position{
+				figure{
+					img{
+						width:100%;
+					}
+				}
+			}
+		}
+
+		&.aspect,
+		&.height{
+			.position{
+				figure{
+			        position:relative;
+			        overflow:hidden;
+					img{
+				        position:absolute;
+				        left:50%;
+				        top:50%;
+				        transform:translate(-50%,-50%);
+				        object-fit:cover;
+				        min-width:100%;
+				        min-height:100%;
+
+					}
+				}
+			}
+		}
+		&.aspect{
+			.position{
+				figure{
+			        padding-top:50%;
+				}
+			}
+		}
+
+		&.height{
+			figure{
+				height:300px;
+			}
+		}
+	}
+
+	&.hasCopy{
+		.position{
+			position:absolute;
+			top:0px;
+			left:0px;
+			z-index:0;
+			width:100%;
+			height:100%;
+
+			figure{
+				position:relative;
+				overflow:hidden;
+				width:100%;
+				height:100%;
+				background-color:#000;
+				img{
+					opacity:0.8;
+			        position:absolute;
+			        left:50%;
+			        top:50%;
+			        transform:translate(-50%,-50%);
+			        object-fit:cover;
+			        min-width:100%;
+			        min-height:100%;
+				}
+			}
+	  }
+
+		.ol{
+			position:relative;
+			left:0;
+			top:0;
+			z-index:5;
+			padding-top:8rem;
+			padding-bottom:5rem;
+			h3,p,a{
+				color:#fff;
+			}
+			h3{
+				font-size:65px;
+				line-height:47px;
+			}
+			p{
+				font-size:24px;
+				line-height:34px;
+				font-weight:400;
+			}
+			a{
+				font-size:26px;
+				line-height:26px;
+				font-weight:400;
+			}
+			&.white{
+				h3,p,a{
+					color:#fff;
+				}
+			}
+			&.black{
+				h3,p,a{
+					color:$body_copy;
+				}
+			}
+		}
+
+		@media screen and (min-width:992px){
+			&{
+				.position{
+					position:relative;
+					left:0;
+					top:0;
+					z-index:1;
+					figure{
+						img{
+							position:relative;
+					        left:0%;
+					        top:0%;
+					        transform:translate(0%,0%);
+					        object-fit:cover;
+					        min-width:100%;
+					        min-height:100%;
+						}
+					}
+				}
+				.ol{
+					position:absolute;
+					top:0px;
+					left:0px;
+					z-index:2;
+					width:100%;
+					height:100%;
+					padding-top:0rem;
+					padding-bottom:0rem;
+					display:flex;
+					align-items:center;
+
+				}
+			}
+		}
+	}
+}

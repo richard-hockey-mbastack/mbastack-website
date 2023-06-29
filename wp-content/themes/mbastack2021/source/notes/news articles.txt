@@ -1,0 +1,98 @@
+['Environment','Award','Insight','Data','CXM','Film','Industry','News']
+
+
+/**/
+    $currentFilter = 'news';
+    $vp = [];
+    $queryArguments = [
+      'post_type' => 'post',
+      'posts_per_page' => 3,
+      'post__not_in' => $visiblePosts
+    ];
+
+    if ( $currentFilter !== 'all' ) {
+        $queryArguments['tax_query'] = array(
+            array(
+                'taxonomy' => 'category',
+                'field'    => 'slug',
+                'terms'    => array( $currentFilter ),
+            )
+        );
+    }
+
+    $the_query = new WP_Query( $queryArguments );
+    $foundPosts = $the_query->post_count;
+
+    echo "<p class=\"testex\">filter: $currentFilter</p>";
+    echo "<p class=\"testex\">visible posts: ".implode(',',$visiblePosts)."</p>";
+
+    if ( $the_query->have_posts() ) {
+      $index = 1;
+      while ( $the_query->have_posts() ) {
+        $the_query->the_post();
+        $vp[] = $post->ID;
+      }
+    }
+    wp_reset_postdata();
+
+    $newIDS = array_merge($visiblePosts, $vp);
+    echo "<p class=\"testex\">count: $foundPosts</p>";
+    echo "<p class=\"testex\">new posts: ".implode(',',$vp)."</p>";
+    echo "<p class=\"testex\">new visible posts: ".implode(',',$newIDS)."</p>";
+/**/
+
+/* */
+    $currentFilter = 'news';
+    $queryArguments = [
+      'post_type' => 'post',
+      'posts_per_page' => $initialArticleCount,
+      'post__not_in' => $visiblePosts
+    ];
+
+    if ( $currentFilter !== 'all' ) {
+        $queryArguments['tax_query'] = array(
+            array(
+                'taxonomy' => 'category',
+                'field'    => 'slug',
+                'terms'    => array( $currentFilter ),
+            )
+        );
+    }
+
+    $the_query = new WP_Query( $queryArguments );
+    $foundPosts = $the_query->post_count;
+
+    // process found posts 
+    $newIDs = [];
+    $items = [];
+    if ( $the_query->have_posts() ) {
+        while ( $the_query->have_posts() ) {
+            $the_query->the_post();
+
+            $post_id = get_the_ID();
+
+            $thisPostImageURL = wp_get_attachment_image_src(get_field( 'post_image', $post_id ), 'full')[0];
+            $thisPostCategories = wp_get_post_categories( $post_id, [] ); // returns category ID
+            $cat = get_category( $thisPostCategories[0] ); // get FIRST category
+
+            $thisPost = [
+                'id' => $post_id,
+                'title' => get_the_title(),
+                'image' => $thisPostImageURL,
+                'synopsis' => get_field( 'post_synopsis', $post_id ),
+                'has_external_link' => get_field( 'link_is_internal', $post_id ),
+                'link_url' => get_field( 'link_url', $post_id ),
+                'link_caption' => get_field( 'link_caption', $post_id ),
+                'date' => get_the_date("d.m.y", $post_id),
+                'category' => $cat->slug,
+                'permalink'=> get_permalink($post_id)
+            ];
+            $items[] = $thisPost;
+            $newIDs[] = $post->ID;
+        }
+    }
+    wp_reset_postdata();
+
+    echo "<p class=\"testex\">foundPosts ".$foundPosts."</p>";
+    echo "<pre>".print_r($items,true)."</pre>";
+/* */

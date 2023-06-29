@@ -1,0 +1,36 @@
+section.six_degrees{
+
+	header.topclip{
+		.container{
+			& > div{
+				h2{
+					color:$body-copy;
+					text-transform:none;
+				}
+			}
+		}
+	}
+	p{
+		font-weight:400;
+		font-size: 18px;
+		line-height: 160%;
+	}
+	ul{
+		list-style-type:none;
+		padding-left:0;
+		li{
+			font-weight:300;
+			font-size: 18px;
+			line-height: 160%;
+		}
+	}
+	figure{
+		margin:0 auto;
+		width:fit-content;
+	}
+	@media screen and (min-width:992px){
+		&{
+
+		}
+	}
+}

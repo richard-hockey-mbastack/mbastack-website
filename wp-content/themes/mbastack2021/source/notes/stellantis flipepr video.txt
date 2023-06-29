@@ -1,0 +1,7 @@
+<div class="brochureVideo">
+	<div class="container" id="flipperBox" style="background-image:url('/img/casestudy/citroen-c3-aircross/pic2.jpg');" data-mpv="/video/casestudies/infinity.mp4" data-webm="" data-ogg="">
+		<video muted="" preload="metadata" nocontrols="" playsinline="" loop="loop" class="">
+			<source type="video/mp4" src="/video/casestudies/infinity.mp4">
+		</video>
+	</div>
+</div>

@@ -1,0 +1,55 @@
+https://lottiefiles.com/share/woemzsxh
+three chairs
+
+<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+<lottie-player src="https://assets9.lottiefiles.com/packages/lf20_woemzsxh.json" background="transparent" speed="1" style="width: 300px; height: 300px;" loop controls autoplay></lottie-player>
+
+
+https://lottiefiles.com/share/ohzux8th
+CXM Graph
+
+<scriptsrc="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+<lottie-player src="https://assets10.lottiefiles.com/packages/lf20_ohzux8th/data.json" background="transparent" speed="1" style="width: 300px; height: 300px;" loop controls autoplay></lottie-player>
+
+
+https://lottiefiles.com/share/cqkscr0q
+Updated CXM Graph 14/9/2021
+https://assets6.lottiefiles.com/packages/lf20_cqkscr0q/data.json
+
+
+https://lottiefiles.com/share/tafvzubs
+CMX maps
+
+<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script><lottie-player src="https://assets10.lottiefiles.com/packages/lf20_tafvzubs.json" background="transparent" speed="1" style="width: 300px; height: 300px;" loop controls autoplay></lottie-player>
+
+
+https://lottiefiles.com/share/kwortoft
+dream-accelerator
+
+<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+<lottie-player src="https://assets10.lottiefiles.com/packages/lf20_kwortoft/MBAstack_icon_Dream.json" background="transparent" speed="1" style="width: 300px; height: 300px;" loop controls autoplay></lottie-player>
+
+https://lottiefiles.com/share/tk3bet5x
+visible-data
+
+<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+<lottie-player src="https://assets2.lottiefiles.com/packages/lf20_tk3bet5x.json" background="transparent" speed="1" style="width: 300px; height: 300px;" loop controls autoplay></lottie-player>
+
+https://lottiefiles.com/share/krl9oadu
+cxm-narrative
+
+<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+<lottie-player src="https://assets5.lottiefiles.com/packages/lf20_krl9oadu.json" background="transparent" speed="1" style="width: 300px; height: 300px;" loop controls autoplay></lottie-player>
+
+https://lottiefiles.com/share/xkcrxeln
+group map desktop
+
+<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+<lottie-player src="https://assets6.lottiefiles.com/packages/lf20_xkcrxeln/Map_Desktop.json" background="transparent" speed="1" style="width: 300px; height: 300px;" loop controls autoplay></lottie-player>
+
+https://lottiefiles.com/share/fttz0vjx
+group map mobile
+
+<scriptsrc="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+<lottie-player src="https://assets5.lottiefiles.com/packages/lf20_fttz0vjx/MBAstack_Mobile.json" background="transparent" speed="1" style="width: 300px; height: 300px;" loop controls autoplay></lottie-player>
+ 

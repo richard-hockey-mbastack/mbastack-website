@@ -1,0 +1,9 @@
+PARALLAX BACKGROUND
+https://lemehovskiy.github.io/parallax_background/
+https://lemehovskiy.github.io/parallax_background/demo/
+
+requires GSAP, TweenLite, CSSPlugin and Jquery
+
+
+related item:
+https://lemehovskiy.github.io/parallax-content/

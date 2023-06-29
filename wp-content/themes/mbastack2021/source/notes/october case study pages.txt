@@ -1,0 +1,84 @@
+October 2021 case study page updates
+
+post office parcels
+
+	banner *
+	intro *
+	full width video *
+	text-and-image
+	two column text
+	full width image *
+	two column text (blank left column)
+	media carousel
+	text-and-image
+	mismatched images
+	two column text
+	awards
+	share
+	more case studies carousel
+
+interflora
+
+	banner *
+	intro *
+	full width video *
+	text-and-image (t/i)
+	text-and-image (i/t)
+	two column text
+	full width video *
+	text-and-image (t/i)
+	mismatched images
+	awards
+	share
+	more case studies carousel
+
+stellantis
+
+	banner *
+	intro *
+	text-and-image
+	mismatched images
+	two column text
+	triple-staggered-images
+	awards
+	full width image *
+	two column text
+	share
+	more case studies carousel
+
+royal mail marketreach
+
+	banner *
+	intro *
+	full width video *
+	text-and-image (t/i)
+	mismatched images
+	single column text with left margin
+	media carousel
+	two column text
+	yet another image/video carousel ???
+	text-and-image (t/i)
+	text-and-image (i/t)
+	two column text
+	full width image *
+	triple-staggered-images
+	awards
+	share
+	more case studies carousel
+
+elanco
+
+	banner *
+	intro *
+	full width image *
+	text-and-image (i/t)
+	two column text
+	full width image *
+	triple-staggered-images
+	text-and-image (i/t) -> video
+	text-and-image (t/i)
+	two column text
+	awards
+	share
+	more case studies carousel
+

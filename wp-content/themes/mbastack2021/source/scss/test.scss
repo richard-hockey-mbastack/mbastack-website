@@ -1,0 +1,58 @@
+/* test elemenst */
+
+.fixedBox{
+	width:100%;
+	height:100vh;
+	position:relative;
+	overflow:hidden;
+	clip: rect(0, auto, auto, 0);
+	img{
+		position:fixed;
+		z-index:-1;
+		left:50%;
+		top:0px;
+		transform:translate(-50%,0);
+		object-fit:cover;
+		object-position:center center;
+		min-width:100vw;  						
+		min-height:100vh;
+	}
+}
+
+p.iosStatus{
+	font-size:5rem;
+	line-height:120%;
+	font-weight:400;
+	span{
+		display:none;
+		&.notios{
+			display:block;
+		}
+	}
+}
+.is-ios{
+	p.iosStatus{
+		span{
+			display:block;
+			&.notios{
+				display:none;
+			}
+		}
+	}
+}
+
+section.module.scrollMonitor{
+	min-height:75vh;
+	overflow:hidden;
+	.container{
+		position:relative;
+	}
+	.sc{
+		background-color:#f00;
+		width:100vw;
+		height:100vh;
+		img{
+			object-fit:cover;
+		}
+	}
+}

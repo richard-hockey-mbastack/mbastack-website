@@ -1,0 +1,44 @@
+/*
+Modules flexuble content template for layout: who_we_are_intro_block
+/blocks/commom/modules/who_we_are_intro_block.php
+*/
+
+section.whoWeAreIntro{
+	.background{
+		
+		background-color: #fff;
+		figure{
+			padding-top: 30%;	
+			img{
+				transform: translate3d(-50%,-50%,0);
+				width: 60%;
+				height: auto;
+			}
+		}
+		&.videoLoaded{
+			figure{
+				display: block;	
+			}
+		}
+		// .inlineWrapper{}
+	}
+
+	.text{
+		@media screen and (min-width:992px) {
+			width: 75%;
+			margin-left:auto;
+			margin-right:auto;
+		}
+		p{
+			font-size:22px;
+			line-height:120%;
+			color:¢body-copy;
+			font-weight:400;
+			margin:0;
+			strong{
+				color:#6d00ff;
+				font-weight:400;
+			}
+		}
+	}
+}

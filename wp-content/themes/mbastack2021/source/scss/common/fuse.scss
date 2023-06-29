@@ -1,0 +1,199 @@
+/*
+Modules flexuble content template for layout: fuse
+/blocks/commom/modules/fuse.php
+*/
+
+section.fuse{
+	padding-top: 0px;
+	padding-bottom: 0px;
+
+	.bar{
+		width: 100% ;
+		padding-top: 30px;
+		display: flex;
+		flex-wrap: wrap;
+	}
+	.box{
+		z-index: 2;
+		// margin-bottom: -5rem;
+		width:auto;
+		margin-left:auto;
+		margin-right:auto;
+	}
+	.background-x{
+		background-color:transparent;
+		.videoWrapper{
+			width:280px;
+			height:208px;
+			position:static;
+			left:0px;
+			top:0px;
+			video{
+				width:280px;
+				height:268px;
+			}
+		}
+	}
+
+	h2{
+		position:relative;
+		font-size: 17px;
+		line-height: 150%;
+		font-weight: 400;
+		color: $body-copy;
+		padding-right:0px;
+		padding-bottom:220px;
+		overflow:hidden;
+		margin-bottom:0;
+		span{
+			color: $purple;
+		}
+		.videoClipn{
+			display: inline-block;
+			position: absolute;
+			z-index: -1;
+			bottom: 0px;
+			right:0px
+		}
+	}
+}
+/*
+@media screen and (min-width: 360px) {
+	section.fuse{
+		.box{
+			h2{
+				.videoClipn{
+					right:-20px;
+				}
+			}
+		}
+	}
+}
+
+@media screen and (min-width: 400px) {
+	section.fuse{
+		.box{
+			h2{
+				.videoClipn{
+					right:60px;
+				}
+			}
+		}
+	}
+}
+
+@media screen and (width: 414px) {
+	section.fuse{
+		.box{
+			h2{
+				
+				span{
+					display:block;
+				}
+				.videoClipn{
+					right:-60px;
+				}
+			}
+		}
+	}
+}
+
+@media screen and (min-width: 480px) {
+	section.fuse{
+		.box{
+			h2{
+				background-color:transoarent;
+				.videoClipn{
+					right:-50px;
+				}
+			}
+		}
+	}
+}
+
+@media screen and (min-width: 530px) {
+	section.fuse{
+		.box{
+			h2{
+				.videoClipn{
+					right:40px;
+				}
+			}
+		}
+	}
+}
+
+@media screen and (min-width: 570px) {
+	section.fuse{
+		.box{
+			h2{
+				.videoClipn{
+					right:60px;
+				}
+			}
+		}
+	}
+}
+
+@media screen and (min-width: 640px) {
+	section.fuse{
+		.box{
+			h2{
+				.videoClipn{
+					right:60px;
+				}
+			}
+		}
+	}
+}
+
+@media screen and (min-width: 768px) {
+	section.fuse{
+		.box{
+			h2{
+				.videoClipn{
+					right: 330px;
+				}
+			}
+		}
+	}
+}
+*/
+@media screen and (min-width: 992px) {
+	section.fuse{
+		.box{
+			h2{
+				font-size: 34px;
+				padding-right:230px;
+				padding-bottom:170px;
+				.videoClipn{
+					right: 0;
+				}
+			}
+		}
+	}
+}
+
+@media screen and (min-width: 1200px) {
+	section.fuse{
+		.box{
+			h2{
+				.videoClipn{
+					right: 0;
+				}
+			}
+		}
+	}
+}
+
+@media screen and (min-width: 1400px) {
+	section.fuse{
+		.box{
+			h2{
+				.videoClipn{
+					right: 0;
+				}
+			}
+		}
+	}
+}

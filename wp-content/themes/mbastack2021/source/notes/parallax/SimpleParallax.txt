@@ -1,0 +1,24 @@
+SimpleParallax
+https://simpleparallax.com/
+
+https://www.jqueryscript.net/animation/Image-Parallax-Scroll-jQuery-SimpleParallax.html
+
+<script src="<?php echo get_template_directory_uri(); ?>/assets/js/library/simpleParallax.min.js"></script>
+
+<section class="p1">
+	<img alt="" src="<?php echo get_template_directory_uri(); ?>/assets/img/content/home/p2.jpg; ?>" class="parallaxImage">
+		<div class="container">
+			<div class="row">
+				<div class="col">
+					
+					<h2>parallax background image .p1 - 'simplePARALLAX'</h2>
+				</div>
+			</div>
+		</div>
+</section>
+
+	var pxImage = document.getElementsByClassName('parallaxImage');
+	new simpleParallax(pxImage,{
+		"orientation" : "up",
+		"scale" : 2.0
+	});

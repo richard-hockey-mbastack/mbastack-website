@@ -1,0 +1,71 @@
+MBAstack-2021
+
+page templates
+
+layout of most of these is not known at the aomunt, the only page I have ssen so far is the home page
+
+home
+	common header/navbar
+	full width image carousel with sticky background images * not a good combination with respect to iOS
+	two column text/image with background image + colour
+	3 column 1 row case study grid
+	4 column 2 row client glogo grid with background image + colur and subheader
+	hybrid news items
+		full width 8/4 image/text column for first item
+		3 item 4 / 4 / 4 grid for following items
+	3 x 2 grid of people images
+	common footer
+
+who-we-are
+	common header/navbar
+	hero - single fixed image with page title overlay
+	two column text/image with background image + colour
+	full width video panel
+	two column text/image with background image + colour
+	two column image/text with background image + colour
+	4 column 1 row case study grid
+	two column image/text with background image + colour
+	common footer
+
+news
+	common header/navbar
+	hero - single fixed image with page title overlay
+	hybrid news items
+		full width 8/4 image/text column for first item
+		3 item 4 / 4 / 4 grid for following items
+	hybrid Blog items
+		full width 8/4 image/text column for first item
+		2 item 6 / 6 grid for following items
+	common footer
+
+	post / blog item
+		?
+
+work
+	common header/navbar
+	hero - single fixed image with page title overlay
+	repeater (4 selected items):
+		full width with text overlay (only shown on rollover on section of image,mystery meat navigation anyone?)
+		case studies [image,client,campaing,synoposis,link]
+	common footer
+
+	case-study
+		?
+
+culture
+	?
+
+contact
+	?
+
+
+post types (speculation based on new home page layout ane existing sub-pages)
+
+posts -> home page,news
+clients (logos) -> home page, work page
+partners (logos) -> footer
+case studies -> work page, individual case study pages
+people -> who-we-are,culture page
+offices -> contact
+vacancies -> contact
+slides -> home page

@@ -1,0 +1,216 @@
+// values_blocks
+
+section.valuesBlocks{
+	padding-top:0px;
+	padding-bottom:0px;
+
+	.pair{
+		width:100%;
+		padding:3rem 0 3rem 0;
+		display:flex;
+		flex-wrap:wrap;
+		.image{
+			width:100%;
+			padding-top:50%;
+			background-repeat: no-repeat;
+			background-size: cover;
+			background-position: center;
+			order:1;
+		}
+		&.black{
+			.text{
+				h2,h4,p,ul{
+					color:$body-copy;
+				}
+				h3{
+					color:#e000ff;
+				}
+			}
+		}
+		&.white{
+			.text{
+				h2,h3,h4,p,ul{
+					color:#fff;
+				}
+			}
+		}
+		.text{
+			width:100%;
+			block-size:border-box;
+			padding-left:2rem;
+			padding-right:2rem;
+			padding-top:2rem;
+			order:2;
+			h2{
+				font-size:2.5rem;
+			}
+			h3{
+
+			}
+			p{
+				font-size: 1.15rem;
+				font-weight:300;
+			}
+			ul{
+				list-style-type:none;
+				padding:1rem;
+				border:1px solid #e300ff;
+				li{
+					margin-bottom:1rem;
+					padding-left:32px;
+					background-image:url('../img/values-bullet.png');
+					background-repeat:no-repeat;
+					display:block;
+					font-size: 1.15rem;
+					font-weight:300;
+
+					&:last-child{
+						margin-bottom:0rem;
+					}
+				}
+			}
+			.tbox{
+				width:100%;
+				padding:0rem 0rem 0rem 0rem;
+				box-sizing:border-box;
+				
+				/*
+				@media screen and (min-width:576px) {
+					&{
+						max-width:270px;
+					}
+				}
+				@media screen and (min-width:768px) {
+					&{
+						max-width:360px;
+					}
+				}
+				*/
+
+				@media screen and (min-width:992px) {
+					&{
+						max-width:480px;
+					}
+				}
+				@media screen and (min-width:1200px) {
+					&{
+						max-width:570px;
+					}
+				}
+				@media screen and (min-width:1400px) {
+					&{
+						max-width:660px;
+					}
+				}
+			}
+		}
+		&.image-first{
+			.pair{
+				&:nth-child(odd){
+					.text{
+						order:2;
+					}
+					.image{
+						order:1;
+					}
+				}
+				&:nth-child(even){
+					.text{
+						order:2;
+					}
+					.image{
+						order:1;
+					}
+				}
+			}
+		}
+		&.text-first{
+			.pair{
+				&:nth-child(odd){
+					.text{
+						order:2;
+					}
+					.image{
+						order:1;
+					}
+				}
+				&:nth-child(even){
+					.text{
+						order:2;
+					}
+					.image{
+						order:1;
+					}
+				}
+			}
+		}
+	}
+
+
+	@media screen and (min-width:992px){
+		&{
+			.pair{
+				width:100%;
+				display:flex;
+				flex-wrap:nowrap;
+
+				.text{
+					width:calc(50% + 3rem);
+					display:flex;
+					padding-top:0;
+				}
+				.image{
+					width:calc(50% - 3rem);
+					padding-top:0;
+				}
+
+				&:nth-child(odd){
+					.text{
+						order:1;
+						justify-content:flex-end;
+					}
+					.image{
+						order:2;
+					}
+				}
+				&:nth-child(even){
+					.text{
+						order:2;
+						justify-content:flex-start;
+					}
+					.image{
+						order:1;
+					}
+				}
+			}
+
+			&.image-first{
+				.pair{
+					&:nth-child(odd){
+						.text{
+							order:2;
+							justify-content:flex-start;
+						}
+						.image{
+							order:1;
+						}
+					}
+					&:nth-child(even){
+						.text{
+							order:1;
+							justify-content:flex-end;
+						}
+						.image{
+							order:2;
+						}
+					}
+				}
+			}
+		}
+	}
+	@media screen and (min-width:1200px){
+		&{
+
+		}
+	}
+}

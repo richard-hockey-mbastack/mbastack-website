@@ -1,0 +1,9 @@
+section.singleColumn.noTitle {
+  padding-top: 5rem;
+}
+section.singleColumn.black {
+  color: #000;
+}
+section.singleColumn.white {
+  color: #fff;
+}
