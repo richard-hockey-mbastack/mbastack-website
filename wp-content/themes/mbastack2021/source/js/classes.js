@@ -183,11 +183,12 @@ class VimeoVideoLoader  {
 		// check to see if the video is in a slick slider carousel
 		this.isInSlickSlider = (this.container.parents('.slick-slider').length > 0);
 
-		$(this).css({"border" : "10px solid red"});
+		// $(this).css({"border" : "10px solid red"});
 		this.format = this.container.attr('data-format'); // vimeo, inline, youtube
-
 		this.mode = this.container.attr('data-mode'); // autoplay, manual, hover
 		this.source = this.container.attr('data-source'); // autoplay, manual, hover
+
+		console.log("VimeoVideoLoader init classes 191 format: %s mode: %s source: %s", this.format, this.mode, this.source );
 
 		this.iframe = this.container.find('iframe');
 		this.player = new Vimeo.Player(this.iframe.get(0));
